@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CurrenciesTableSeeder::class);
         $this->call(AboutsTableSeeder::class);
         $this->call(CareersTableSeeder::class);
-        // $this->call(ColorOptionsTableSeeder::class);
+        $this->call(ColorOptionsTableSeeder::class);
     }
 }

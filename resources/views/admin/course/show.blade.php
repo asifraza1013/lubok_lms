@@ -53,15 +53,15 @@
               <li  class=""  role="presentation"><a href="#copy" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.Question') }}</a></li>
               <li  class=""  role="presentation"><a href="#ans" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.Answer') }}</a></li>
               <li  class=""  role="presentation"><a href="#jj" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.ReviewRating') }}</a></li>
-              <li  class=""  role="presentation"><a href="#an" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.Announcement') }}</a></li>
-              <li  class=""  role="presentation"><a href="#report" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.ReviewReport') }}</a></li>
-              <li  class=""  role="presentation"><a href="#topic" aria-controls="topic" role="tab" data-toggle="tab">{{ __('adminstaticword.QuizTopic') }}</a></li>
+              <!-- <li  class=""  role="presentation"><a href="#an" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.Announcement') }}</a></li> -->
+              <!-- <li  class=""  role="presentation"><a href="#report" aria-controls="settings" role="tab" data-toggle="tab">{{ __('adminstaticword.ReviewReport') }}</a></li> -->
+              <!-- <li  class=""  role="presentation"><a href="#topic" aria-controls="topic" role="tab" data-toggle="tab">{{ __('adminstaticword.QuizTopic') }}</a></li> -->
              
               @if($gsetting->appointment_enable == 1)
               <li  class=""  role="presentation"><a href="#appoint" aria-controls="Appointment" role="tab" data-toggle="tab">{{ __('adminstaticword.Appointment') }}</a></li>
               @endif
 
-              <li  class=""  role="presentation"><a href="#paper" aria-controls="topic" role="tab" data-toggle="tab">{{ __('adminstaticword.PreviousPaper') }}</a></li>
+              <!-- <li  class=""  role="presentation"><a href="#paper" aria-controls="topic" role="tab" data-toggle="tab">{{ __('adminstaticword.PreviousPaper') }}</a></li> -->
 
 
               

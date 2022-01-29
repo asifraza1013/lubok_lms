@@ -307,7 +307,7 @@
                                                             <input type="hidden" name="user_id"  value="{{auth()->user()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$recent_course->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @else
@@ -319,12 +319,12 @@
                                                             <input type="hidden" name="user_id"  value="{{auth()->user()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$recent_course->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @endif 
                                             @else
-                                                <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li>
+                                                <!-- <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li> -->
                                             @endif
                                         </ul>
                                     </div>
@@ -516,7 +516,7 @@ else{
                                                             <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$enrol->courses->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @else
@@ -528,12 +528,12 @@ else{
                                                             <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$enrol->courses->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @endif 
                                             @else
-                                                <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li>
+                                                <!-- <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li> -->
                                             @endif
                                         </ul>
                                     </div>
@@ -784,7 +784,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                                                             <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$c->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @else
@@ -796,12 +796,12 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                                                             <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                             <input type="hidden" name="course_id"  value="{{$c->id}}" />
 
-                                                            <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                            <!-- <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                         </form>
                                                     </li>
                                                 @endif 
                                             @else
-                                                <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li>
+                                                <!-- <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li> -->
                                             @endif
                                         </ul>
                                     </div>

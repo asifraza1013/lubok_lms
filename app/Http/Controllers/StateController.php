@@ -77,7 +77,7 @@ class StateController extends Controller
 
 
       
-        return redirect('admin/state');
+        return redirect('state');
 
      
     }
@@ -141,7 +141,7 @@ class StateController extends Controller
       $state = State::find($id);
       $state->delete();
       Session::flash('success', trans('flash.DeletedSuccessfully'));
-      return redirect('admin/state');
+      return redirect('state');
     }
 
     public function addstate(Request $request)
@@ -172,6 +172,6 @@ class StateController extends Controller
 
         Session::flash('success', trans('flash.AddedSuccessfully'));
         
-        return redirect('admin/state');
+        return redirect('state');
     }
 }

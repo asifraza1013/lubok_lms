@@ -112,7 +112,8 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
         <img title="{{ $project_title }}" width="20px" src="{{ url('images/favicon/'.$gsetting->favicon) }}" alt=""/>
       </span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"> <img title="{{ $project_title }}" width="100px" src="{{ url('images/logo/'.$gsetting->logo) }}" alt=""/></span>
+      <!-- <span class="logo-lg"> <img title="{{ $project_title }}" width="100px" src="{{ url('images/logo/'.$gsetting->logo) }}" alt=""/></span> -->
+      <span class="logo-lg"> <strong style="color: #49aa43;">{{$project_title}}</strong></span>
     </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -197,7 +198,7 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
             <li>
                  <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
+                     document.getElementById('logout-form-2').submit();">
                     {{ __('adminstaticword.Logout') }}
                 </a>
 

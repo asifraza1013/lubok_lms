@@ -10,9 +10,9 @@
           <h3 class="box-title">Country</h3>
         </div> 
         <div class="panel-heading">
-          <a href=" {{url('admin/country')}} " class="btn btn-success pull-right owtbtn">< Back</a> 
+          <a href=" {{url('country')}} " class="btn btn-success pull-right owtbtn">< Back</a> 
         </div>   
-        <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('admin/country/'.$countries->id)}}" data-parsley-validate class="form-horizontal form-label-left">
+        <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('country/'.$countries->id)}}" data-parsley-validate class="form-horizontal form-label-left">
             {{csrf_field()}}
             {{ method_field('PUT') }}
 

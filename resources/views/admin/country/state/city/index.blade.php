@@ -10,7 +10,7 @@
 	      	<div class="box-header with-border">
 	        	<h3 class="box-title">{{ __('adminstaticword.City') }}</h3>
 
-	        	<a href="{{url('admin/city/create')}} " class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.City') }}</a>
+	        	<a href="{{url('city/create')}} " class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.City') }}</a>
 
 	            <a data-toggle="modal" data-target="#myModalcity" href="#" class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.CityManual') }}</a> 
 	    	</div>
@@ -40,7 +40,7 @@
 			                  <td>@if(isset($city->country)) {{ $city->country->nicename }} @endif</td>
 			                  
 			                 
-			                  <td><form  method="post" action="{{url('admin/city/'.$city->id)}}" data-parsley-validate class="form-horizontal form-label-left">
+			                  <td><form  method="post" action="{{url('city/'.$city->id)}}" data-parsley-validate class="form-horizontal form-label-left">
 			                      {{ csrf_field() }}
 			                      {{ method_field('DELETE') }}
 			                       <button  type="submit" class="btn btn-danger" onclick="return confirm('Delete This City..?)" ><i class="fa fa-fw fa-trash-o"></i></button></td>

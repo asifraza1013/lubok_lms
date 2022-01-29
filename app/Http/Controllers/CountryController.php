@@ -63,7 +63,7 @@ class CountryController extends Controller
             session()->flash('delete', trans('flash.AlreadyExist'));
         }
                 
-        return redirect('admin/country');
+        return redirect('country');
 
     }
 
@@ -124,7 +124,7 @@ class CountryController extends Controller
             session()->flash('delete',trans('flash.AlreadyExist'));
         }
                 
-        return redirect('admin/country');
+        return redirect('country');
 
     }
 
@@ -145,7 +145,7 @@ class CountryController extends Controller
 
         if($value){
             session()->flash('delete',trans('flash.DeletedSuccessfully'));
-            return redirect("admin/country");
+            return redirect("country");
         }
     }
 

@@ -92,6 +92,28 @@ Route::middleware(['web'])->group(function () {
         Route::middleware(['is_admin'])->group(function () {
 
             Route::get('/clear-cache',function(){
+                \Artisan::call('migrate --path=database/migrations/update2_2');
+                \Artisan::call('migrate --path=database/migrations/update2_3');
+                \Artisan::call('migrate --path=database/migrations/update2_4');
+                \Artisan::call('migrate --path=database/migrations/update2_5');
+                \Artisan::call('migrate --path=database/migrations/update2_6');
+                \Artisan::call('migrate --path=database/migrations/update2_7');
+                \Artisan::call('migrate --path=database/migrations/update2_8');
+                \Artisan::call('migrate --path=database/migrations/update2_9');
+                \Artisan::call('migrate --path=database/migrations/update3_0_0');
+                \Artisan::call('migrate --path=database/migrations/update3_1_0');
+                \Artisan::call('migrate --path=database/migrations/update3_2_0');
+                \Artisan::call('migrate --path=database/migrations/update3_3_0');
+                \Artisan::call('migrate --path=database/migrations/update3_4_0');
+
+                Artisan::call('db:seed');
+
+                Artisan::call('migrate', [
+                    '--path' => 'vendor/laravel/passport/database/migrations',
+                    '--force' => true,
+                ]);
+
+                \Artisan::call('passport:install');
                 \Artisan::call('cache:clear');
                 \Artisan::call('view:cache');
                 \Artisan::call('view:clear');
@@ -163,9 +185,9 @@ Route::middleware(['web'])->group(function () {
             Route::delete('delete/{id}','UserController@destroy')->name('user.delete');
             });
 
-            Route::resource("admin/country","CountryController");
-            Route::resource("admin/state","StateController");
-            Route::resource("admin/city","CityController");
+            Route::resource("country","CountryController");
+            Route::resource("state","StateController");
+            Route::resource("city","CityController");
 
             Route::resource('page','PageController');
             Route::resource('/testimonial','TestimonialController');
@@ -227,12 +249,12 @@ Route::middleware(['web'])->group(function () {
             Route::get('all/instructor', 'InstructorRequestController@allinstructor')->name('all.instructor');
             
 
-            Route::resource('admin/report/view','CourseReportController');
+            Route::resource('report/view','CourseReportController');
 
             Route::get('banktransfer', 'BankTransferController@show')->name('bank.transfer');
             Route::put('banktransfer/update', 'BankTransferController@update');
 
-            Route::get('admin/lang', 'LanguageController@showlang')->name('show.lang');
+            Route::get('lang', 'LanguageController@showlang')->name('show.lang');
 
             Route::get('admin/frontstatic/{local}', 'LanguageController@frontstaticword')->name('frontstatic.lang');
 
@@ -282,9 +304,9 @@ Route::middleware(['web'])->group(function () {
             Route::resource('refundpolicy', 'RefundPolicyController');
             Route::resource('refundorder', 'RefundController');
 
-            Route::get('admin/coloroption', 'ColorOptionController@index')->name('coloroption.view');
-            Route::post('admin/coloroption/update', 'ColorOptionController@update')->name('coloroption.update');
-            Route::get('admin/coloroption/reset', 'ColorOptionController@reset')->name('coloroption.reset');
+            Route::get('coloroption', 'ColorOptionController@index')->name('coloroption.view');
+            Route::post('coloroption/update', 'ColorOptionController@update')->name('coloroption.update');
+            Route::get('coloroption/reset', 'ColorOptionController@reset')->name('coloroption.reset');
 
             Route::get('database/backup', 'DatabaseController@index')->name('database.backup');
             Route::post('database/genrate', 'DatabaseController@genrate')->name('database.genrate');
@@ -365,7 +387,7 @@ Route::middleware(['web'])->group(function () {
             Route::get('googlemeet/allmeeting', 'GoogleMeetController@allgooglemeeting')->name('googlemeet.allgooglemeeting');
             // ======== googlemeet end ===============================
 
-            Route::get('/admin/addon', 'AddonController@addon')->name('admin.addon');
+            Route::get('addon', 'AddonController@addon')->name('admin.addon');
             Route::get('/admin/add/addon', 'AddonController@addaddon')->name('add.addon');
             Route::post('/admin/install/addon', 'AddonController@installaddon')->name('install.addon');
             Route::post('/admin/addon/status/{module}', 'AddonController@status')->name('status.addon');
@@ -458,8 +480,8 @@ Route::middleware(['web'])->group(function () {
             Route::put('/course/coursechapter/{id}','CourseController@tes')->name('chapter.update');
             Route::get('send', 'CourseclassController@store')->name('notification');
             Route::resource('courselang','CourseLanguageController');
-            Route::get("admin/dropdown","CourseController@upload_info");
-            Route::get("admin/gcat","CourseController@gcato");
+            Route::get("dropdown","CourseController@upload_info");
+            Route::get("gcat","CourseController@gcato");
 
 
             Route::get('instructor', 'InstructorController@index')->name('instructor.index');

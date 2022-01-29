@@ -563,13 +563,13 @@
 	                            <div class="card-header" id="headingEight">
 							        <div class="panel-title">
 							            <label for='r18'>
-							              <input type='radio' id='r18' name='occupation' value='Working' required />
+							              <input type='radio' id='r18' name='occupation' value='Working' required checked/>
 							              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight"></a>
 							              &emsp;<b>{{ __('frontstaticword.banktransfer') }}</b>
 							            </label>
 							        </div>
 						    	</div>
-							    <div id="collapseEight" class="panel-collapse collapse in">
+							    <div id="collapseEight" class="panel-collapse in collapse show">
 							        <div class="card-body">
 		                            	<div class="payment-proceed-btn">
 		                            		<form method="POST" action="{{ url('process/banktransfer') }}" accept-charset="UTF-8" class="form-horizontal" role="form" enctype="multipart/form-data">

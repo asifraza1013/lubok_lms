@@ -49,55 +49,7 @@
             <div class="signup-block">
 
                 <div class="signin-link btm-10">
-                    <div class="row">
-                        @if($gsetting->fb_login_enable == 1)
-                        <div class="col-lg-6">
-                                <a href="{{ url('/auth/facebook') }}" target="_blank" title="facebook" class="btn btn-info btm-10" title="Facebook"><i class="fa fa-facebook"></i>{{ __('frontstaticword.ContinuewithFacebook') }}</a>
-                        </div>
-                        @endif
-
-                        @if($gsetting->google_login_enable == 1)
-                        <div class="col-lg-6">
-                            <div class="google">
-                                <a href="{{ url('/auth/google') }}" target="_blank" title="google" class="btn btn-white btm-10" title="google"><i class="fab fa-google-plus-g"></i>{{ __('frontstaticword.ContinuewithGoogle') }}</a>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($gsetting->amazon_enable == 1)
-                        <div class="col-lg-6">
-                            <div class="signin-link amazon-button">
-                                <a href="{{ url('/auth/amazon') }}" target="_blank" title="amazon" class="btn btn-info btm-10" title="Amazon"><i class="fab fa-amazon"></i>{{ __('frontstaticword.ContinuewithAmazon') }}</a>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($gsetting->linkedin_enable == 1)
-                        <div class="col-lg-6"> 
-                            <div class="signin-link linkedin-button">
-                                <a href="{{ url('/auth/linkedin') }}" target="_blank" title="linkedin" class="btn btn-info btm-10" title="Linkedin"><i class="fab fa-linkedin"></i>{{ __('frontstaticword.ContinuewithLinkedin') }}</a>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($gsetting->twitter_enable == 1)
-                        <div class="col-lg-6">
-                            <div class="signin-link twitter-button">
-                                <a href="{{ url('/auth/twitter') }}" target="_blank" title="twitter" class="btn btn-info btm-10" title="Twitter"><i class="fab fa-twitter"></i>{{ __('frontstaticword.ContinuewithTwitter') }}</a>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($gsetting->gitlab_login_enable == 1)
-                        <div class="col-lg-6">
-                            <div class="signin-link btm-10">
-                                <a href="{{ url('/auth/gitlab') }}" target="_blank" title="gitlab" class="btn btn-white" title="gitlab"><i class="fab fa-gitlab"></i>{{ __('frontstaticword.ContinuewithGitLab') }}</a>
-                            </div>
-                        </div>
-                        @endif
-                    </div>
-                    
-
+                   
                 <form method="POST" class="signup-form" action="{{ route('login') }}">
                     @csrf
                  

@@ -48,7 +48,21 @@
 
                   </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4"> 
+                  @php
+                      $languages = App\CourseLanguage::all();
+                  @endphp
+                  <label for="exampleInputSlug">{{ __('adminstaticword.SelectLanguage') }}</label>
+                  <select name="language_id" class="form-control js-example-basic-single col-md-7 col-xs-12">
+                     <option value="none" selected disabled hidden> 
+                      {{ __('adminstaticword.SelectanOption') }}
+                    </option>
+                    @foreach($languages as $cat)
+                      <option {{ $cor->language_id == $cat->id ? 'selected' : "" }} value="{{ $cat->id }}">{{ $cat->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+                <!-- <div class="col-md-4">
                   <label>{{ __('adminstaticword.ChildCategory') }}:</label>
                   <select name="childcategory_id" id="grand" class="form-control js-example-basic-single">
                     @php
@@ -63,7 +77,7 @@
                     @endforeach
                     @endif
                   </select>
-                </div>     
+                </div>      -->
                 <div class="col-md-3 display-none">
                   @php
                     $User = App\User::all();
@@ -76,7 +90,7 @@
               </div>
               <br>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-6"> 
                   @php
                       $languages = App\CourseLanguage::all();
@@ -110,7 +124,7 @@
                 </div>
                   
                   
-                </div>
+                </div> -->
               
               <br>
 
@@ -240,16 +254,20 @@
                   </li>
                   <input type="hidden" name="free" value="0" id="j111">
                   <br>     
-
-                  <div @if($cor->type ==  '0') class="display-none" @endif id="doabox">
-                    <label for="exampleInputSlug">{{ __('adminstaticword.Price') }}: <sup class="redstar">*</sup></label>
-                    <input type="number" step="0.01"   class="form-control" name="price" id="exampleInputPassword1" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Price') }}" value="{{ $cor->price }}">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div @if($cor->type ==  '0') class="display-none" @endif id="doabox">
+                      <label for="exampleInputSlug">{{ __('adminstaticword.Price') }}: <sup class="redstar">*</sup></label>
+                      <input type="number" step="0.01"   class="form-control" name="price" id="exampleInputPassword1" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Price') }}" value="{{ $cor->price }}">
+                    </div>
                   </div>
-
-                  <div @if($cor->type ==  '0') class="display-none" @endif id="doaboxx">
-                  <br>
-                    <label for="exampleInputSlug">{{ __('adminstaticword.DiscountPrice') }}: <sup class="redstar">*</sup></label>
-                    <input type="number" step="0.01"  class="form-control" name="discount_price" id="exampleInputPassword1" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.DiscountPrice') }}" value="{{ $cor->discount_price }}">
+                  <div class="col-md-6">
+                    <div @if($cor->type ==  '0') class="display-none" @endif id="doaboxx">
+                      <br>
+                        <label for="exampleInputSlug">{{ __('adminstaticword.DiscountPrice') }}: <sup class="redstar">*</sup></label>
+                        <input type="number" step="0.01"  class="form-control" name="discount_price" id="exampleInputPassword1" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.DiscountPrice') }}" value="{{ $cor->discount_price }}">
+                      </div>
                   </div>
                 </div>
                 <div class="col-md-3"> 
@@ -273,13 +291,13 @@
                   @endif
                 </div>
 
-                <div class="col-sm-3">
+                <!-- <div class="col-sm-3">
                   <label for="exampleInputDetails">{{ __('adminstaticword.InvolvementRequest') }}:</label>                 
                   <li class="tg-list-item">
                     <input name="involvement_request" class="tgl tgl-skewed" id="involve" type="checkbox" {{ $cor->involvement_request==1 ? 'checked' : '' }}/>
                     <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="involve"></label>
                   </li>
-                </div>
+                </div> -->
               </div>
               <br>
            
@@ -312,7 +330,7 @@
                 
 
 
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <label for="">{{ __('adminstaticword.Duration') }}: </label>
                   <li class="tg-list-item">              
                     <input class="tgl tgl-skewed" id="duration_type" type="checkbox" name="duration_type" {{ $cor->duration_type == "m" ? 'checked' : '' }} >
@@ -322,7 +340,7 @@
                   <br>
                   <label for="exampleInputSlug">Course Expire Duration</label>
                   <input min="1" class="form-control" name="duration" type="number" id="duration" value="{{ $cor->duration }}" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Duration') }}">
-                </div>
+                </div> -->
 
 
               </div>
@@ -361,7 +379,7 @@
               <br>
 
 
-              <div class="row">
+              <!-- <div class="row">
               <div class="col-sm-4">
 
                   <label for="exampleInputDetails">{{ __('adminstaticword.Assignment') }}:</label>                 
@@ -388,7 +406,7 @@
                     <label class="tgl-btn" data-tg-off="No" data-tg-on="Yes" for="frees2"></label>
                   </li>
                 </div>
-            </div>
+            </div> -->
             <br>
             <br>
 
@@ -485,7 +503,7 @@
   });
 
   $(function() {
-    var urlLike = '{{ url('admin/dropdown') }}';
+    var urlLike = '{{ url('dropdown') }}';
     $('#category_id').change(function() {
       var up = $('#upload_id').empty();
       var cat_id = $(this).val();    
@@ -513,7 +531,7 @@
   });
 
   $(function() {
-    var urlLike = '{{ url('admin/gcat') }}';
+    var urlLike = '{{ url('gcat') }}';
     $('#upload_id').change(function() {
       var up = $('#grand').empty();
       var cat_id = $(this).val();    

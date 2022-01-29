@@ -10,10 +10,10 @@
         <div class="box-header with-border">
           <h3 class="box-title"> {{ __('adminstaticword.Add') }} {{ __('adminstaticword.City') }}</h3>
           <div class="panel-heading">
-            <a href=" {{url('admin/city')}} " class="btn btn-success pull-right owtbtn">< {{ __('adminstaticword.Back') }}</a> 
+            <a href=" {{url('city')}} " class="btn btn-success pull-right owtbtn">< {{ __('adminstaticword.Back') }}</a> 
           </div>   
                
-          <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('admin/city')}}" data-parsley-validate class="form-horizontal form-label-left">
+          <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('city')}}" data-parsley-validate class="form-horizontal form-label-left">
               {{csrf_field()}}
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">

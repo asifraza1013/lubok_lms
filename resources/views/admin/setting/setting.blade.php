@@ -16,10 +16,10 @@
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs" id="nav-tab" role="tablist">
               <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="flaticon-optimization" aria-hidden="true"></i> {{ __('adminstaticword.GeneralSetting') }}</a></li>
-              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="flaticon-graduation" aria-hidden="true"></i> {{ __('adminstaticword.SeoSetting') }}</a></li>
+              <!-- <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="flaticon-graduation" aria-hidden="true"></i> {{ __('adminstaticword.SeoSetting') }}</a></li>
               <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="flaticon-email" aria-hidden="true"></i> {{ __('adminstaticword.MailSetting') }}</a></li>
               <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="flaticon-test" aria-hidden="true"></i> {{ __('adminstaticword.CustomStyleandJS') }}</a></li>
-              <li role="presentation"><a href="#soc-settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="flaticon-share" aria-hidden="true"></i>&nbsp;&nbsp;{{ __('adminstaticword.SocialLoginSetting') }}</a></li>
+              <li role="presentation"><a href="#soc-settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="flaticon-share" aria-hidden="true"></i>&nbsp;&nbsp;{{ __('adminstaticword.SocialLoginSetting') }}</a></li> -->
             </ul>
 
             <!-- Tab panes -->
@@ -28,7 +28,7 @@
               	<br>
               	@include('admin.setting.genral')
               </div>
-              <div role="tabpanel" class="fade tab-pane" id="profile">
+              <!-- <div role="tabpanel" class="fade tab-pane" id="profile">
               	<br>
               	@include('admin.setting.seo')
               </div>
@@ -43,7 +43,7 @@
               <div role="tabpanel" class="fade tab-pane" id="soc-settings">
                 <br>
                  @include('admin.setting.sociallogin')
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

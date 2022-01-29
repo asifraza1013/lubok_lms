@@ -40,7 +40,7 @@
                   <ul class="treeview-menu">
                     <li class="{{ Nav::isResource('category') }}"><a href="{{url('category')}}"><i class="flaticon-rec"></i>{{ __('adminstaticword.Category') }}</a></li>
                     <li class="{{ Nav::isResource('subcategory') }}"><a href="{{url('subcategory')}}"><i class="flaticon-rec"></i>{{ __('adminstaticword.SubCategory') }}</a></li>
-                    <li class="{{ Nav::isResource('childcategory') }}"><a href="{{url('childcategory')}}"><i class="flaticon-rec"></i>{{ __('adminstaticword.ChildCategory') }}</a></li>
+                    <!-- <li class="{{ Nav::isResource('childcategory') }}"><a href="{{url('childcategory')}}"><i class="flaticon-rec"></i>{{ __('adminstaticword.ChildCategory') }}</a></li> -->
                   </ul>
                   @endif                           
 
@@ -48,9 +48,9 @@
                   <li class="{{ Nav::isResource('course') }}"><a href="{{url('course')}}"><i class="flaticon-document" aria-hidden="true"></i><span>{{ __('adminstaticword.Course') }}</span></a></li>
 
 
-                  <li class="{{ Nav::isRoute('courses.reject') }}"><a href="{{route('courses.reject')}}"><i class="flaticon-document" aria-hidden="true"></i><span>{{ __('adminstaticword.RejectedCourses') }}</span></a></li>
+                  <!-- <li class="{{ Nav::isRoute('courses.reject') }}"><a href="{{route('courses.reject')}}"><i class="flaticon-document" aria-hidden="true"></i><span>{{ __('adminstaticword.RejectedCourses') }}</span></a></li> -->
 
-                  <li class="{{ Nav::isResource('courselang') }}"><a href="{{url('courselang')}}"> <i class="flaticon-translation" aria-hidden="true"></i></i><span> {{ __('adminstaticword.Course') }} {{ __('adminstaticword.Language') }}</span></a></li>
+                  <!-- <li class="{{ Nav::isResource('courselang') }}"><a href="{{url('courselang')}}"> <i class="flaticon-translation" aria-hidden="true"></i></i><span> {{ __('adminstaticword.Course') }} {{ __('adminstaticword.Language') }}</span></a></li> -->
                   
                   @if($gsetting->assignment_enable == 1)
                   <li class="{{ Nav::isRoute('assignment.view') }}"><a href="{{route('assignment.view')}}"><i class="flaticon-computer" aria-hidden="true"></i><span>{{ __('adminstaticword.Assignment') }}</span></a></li>
@@ -61,7 +61,7 @@
           </li>
 
 
-          <li class="{{ Nav::isRoute('allrequestinvolve') }} {{ Nav::isRoute('involve.request.index') }} {{ Nav::isRoute('involve.request') }} treeview">
+          <!-- <li class="{{ Nav::isRoute('allrequestinvolve') }} {{ Nav::isRoute('involve.request.index') }} {{ Nav::isRoute('involve.request') }} treeview">
             <a href="#">
               <i class="flaticon-test" aria-hidden="true"></i> <span>{{ __('adminstaticword.MultipleInstructor') }}</span>
               <span class="pull-right-container">
@@ -73,14 +73,14 @@
               <li class="{{ Nav::isRoute('involve.request.index') }}"><a href="{{route('involve.request.index')}}"><i class="flaticon-question" aria-hidden="true"></i>{{ __('adminstaticword.InvolvementRequests') }}</a></li>
                <li class="{{ Nav::isRoute('involve.request') }}"><a href="{{route('involve.request')}}"><i class="flaticon-web-browser" aria-hidden="true"></i>{{ __('adminstaticword.InvolvedInCourse') }}</a></li>
             </ul>
-          </li>
+          </li> -->
 
 
 
           <li class="{{ Nav::isResource('userenroll') }}"><a href="{{url('userenroll')}}"><i class="flaticon-user" aria-hidden="true"></i><span> {{ __('adminstaticword.User') }} {{ __('adminstaticword.Enrolled') }}</span></a></li>
 
 
-          <li class="{{ Nav::isResource('instructorquestion') }} {{ Nav::isResource('instructoranswer') }} treeview">
+          <!-- <li class="{{ Nav::isResource('instructorquestion') }} {{ Nav::isResource('instructoranswer') }} treeview">
             <a href="#">
                 <i class="flaticon-faq"></i> {{ __('adminstaticword.Question') }} / {{ __('adminstaticword.Answer') }}
                 <i class="fa fa-angle-left pull-right"></i>
@@ -91,9 +91,9 @@
 
               <li class="{{ Nav::isResource('instructoranswer') }}"><a href="{{url('instructoranswer')}}"><i class="flaticon-test" aria-hidden="true"></i><span>{{ __('adminstaticword.Answer') }}</span></a></li>
             </ul>
-          </li>
+          </li> -->
 
-          <li class="{{ Nav::isResource('instructor/announcement') }}"><a href="{{url('instructor/announcement')}}"><i class="flaticon-mobile-marketing" aria-hidden="true"></i><span>{{ __('adminstaticword.Announcement') }}</span></a></li>
+          <!-- <li class="{{ Nav::isResource('instructor/announcement') }}"><a href="{{url('instructor/announcement')}}"><i class="flaticon-mobile-marketing" aria-hidden="true"></i><span>{{ __('adminstaticword.Announcement') }}</span></a></li> -->
 
           <li class="{{ Nav::isResource('blog') }}"><a href="{{url('blog')}}"><i class="flaticon-personal-information"></i>{{ __('adminstaticword.Blog') }}</a></li>
 
@@ -150,7 +150,7 @@
           @endif
 
 
-          <li class="{{ Nav::isResource('pending.payout') }} {{ Nav::isRoute('admin.completed') }} treeview">
+          <!-- <li class="{{ Nav::isResource('pending.payout') }} {{ Nav::isRoute('admin.completed') }} treeview">
             <a href="#">
                 <i class="flaticon-money-1"></i> {{ __('adminstaticword.MyRevenue') }}
                 <i class="fa fa-angle-left pull-right"></i>
@@ -162,13 +162,13 @@
               <li class="{{ Nav::isRoute('admin.completed') }}"><a href="{{route('admin.completed')}}"><i class="flaticon-file"></i>{{ __('adminstaticword.CompletedPayout') }}</a></li>
 
             </ul>
-          </li>
+          </li> -->
 
-          @if(isset($isetting))
+          <!-- @if(isset($isetting))
 
           <li class="{{ Nav::isResource('instructor.pay') }}"><a href="{{route('instructor.pay')}}"><i class="flaticon-settings-3" aria-hidden="true"></i><span>{{ __('adminstaticword.PayoutSettings') }}</span></a></li>
 
-          @endif
+          @endif -->
           
           
 

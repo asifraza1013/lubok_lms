@@ -50,10 +50,21 @@
                     <select name="subcategory_id" id="upload_id" class="form-control js-example-basic-single">
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4"> 
+                  <label>{{ __('adminstaticword.Language') }}: <span class="redstar">*</span></label>
+                  <select name="language_id" class="form-control js-example-basic-single">
+                    @php
+                    $languages = App\CourseLanguage::all();
+                    @endphp  
+                    @foreach($languages as $caat)
+                      <option {{ $caat->language_id == $caat->id ? 'selected' : "" }} value="{{ $caat->id }}">{{ $caat->name }}</option>
+                    @endforeach
+                  </select> 
+                </div>
+                <!-- <div class="col-md-4">
                   <label>{{ __('adminstaticword.ChildCategory') }}:</label>
                   <select name="childcategory_id" id="grand" class="form-control js-example-basic-single"></select>
-                </div>
+                </div> -->
                 <div class="col-md-3 display-none">
                   <label for="exampleInputTit1e">{{ __('adminstaticword.User') }}</label>
                     <select name="user_id" class="form-control js-example-basic-single col-md-7 col-xs-12">
@@ -65,7 +76,7 @@
               </div>
               <br>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-6"> 
                   <label>{{ __('adminstaticword.Language') }}: <span class="redstar">*</span></label>
                   <select name="language_id" class="form-control js-example-basic-single">
@@ -95,7 +106,7 @@
                 </div>
 
                 
-              </div>
+              </div> -->
               <br>
 
 
@@ -224,12 +235,17 @@
                     <label class="tgl-btn" data-tg-off="{{ __('adminstaticword.Free') }}" data-tg-on="{{ __('adminstaticword.Paid') }}" for="cb111"></label>
                   </li>
                   <br>
-                  <div class="display-none" id="pricebox">
-                    <label for="exampleInputSlug">{{ __('adminstaticword.Price') }}: <sup class="redstar">*</sup></label>
-                    <input type="text" class="form-control" name="price" id="priceMain" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Price') }}" value="{{ (old('price')) }}">
-        
-                    <label for="exampleInputSlug">{{ __('adminstaticword.DiscountPrice') }}: </label>
-                    <input type="text" class="form-control" name="discount_price" id="offerPrice" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.DiscountPrice') }}" value="{{ (old('discount_price')) }}">
+                </div>
+                <div class="display-none" id="pricebox">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="exampleInputSlug">{{ __('adminstaticword.Price') }}: <sup class="redstar">*</sup></label>
+                      <input type="text" class="form-control" name="price" id="priceMain" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Price') }}" value="{{ (old('price')) }}">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="exampleInputSlug">{{ __('adminstaticword.DiscountPrice') }}: </label>
+                      <input type="text" class="form-control" name="discount_price" id="offerPrice" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.DiscountPrice') }}" value="{{ (old('discount_price')) }}">
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -254,14 +270,14 @@
                   @endif
                 </div>
 
-                 <div class="col-sm-3">
+                 <!-- <div class="col-sm-3">
 
                   <label for="exampleInputDetails">{{ __('adminstaticword.InvolvementRequest') }}:</label>                 
                   <li class="tg-list-item">
                     <input name="involvement_request" class="tgl tgl-skewed" id="involve" type="checkbox"/>
                     <label class="tgl-btn" data-tg-off="{{ __('adminstaticword.OFF') }}" data-tg-on="{{ __('adminstaticword.ON') }}" for="involve"></label>
                   </li>
-                </div>
+                </div> -->
               </div>
               <br>
 
@@ -288,7 +304,7 @@
                 
              
 
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
 
                 <label for="">{{ __('adminstaticword.Duration') }}: </label>
                 <li class="tg-list-item">              
@@ -300,7 +316,7 @@
                 <input min="1" class="form-control" name="duration" type="number" id="duration"  placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.CourseExpireDuration') }}" value="{{ (old('duration')) }}">
 
 
-              </div>
+              </div> -->
               </div>
 
               <br>
@@ -328,7 +344,7 @@
             <br>
 
 
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-4">
 
                   <label for="exampleInputDetails">{{ __('adminstaticword.Assignment') }}:</label>                 
@@ -355,14 +371,9 @@
                     <label class="tgl-btn" data-tg-off="{{ __('adminstaticword.No') }}" data-tg-on="{{ __('adminstaticword.Yes') }}" for="frees2"></label>
                   </li>
                 </div>
-            </div>
-            <br>
-            <br>
-
-             
-
-           
-
+            </div> -->
+            <!-- <br> -->
+            <!-- <br> -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-lg col-md-4 btn-primary">{{ __('adminstaticword.Submit') }}</button>
               </div>
@@ -490,7 +501,7 @@
   });
 
   $(function() {
-    var urlLike = '{{ url('admin/dropdown') }}';
+    var urlLike = '{{ url('dropdown') }}';
     $('#category_id').change(function() {
       var up = $('#upload_id').empty();
       var cat_id = $(this).val();    
@@ -518,7 +529,7 @@
   });
 
   $(function() {
-    var urlLike = '{{ url('admin/gcat') }}';
+    var urlLike = '{{ url('gcat') }}';
     $('#upload_id').change(function() {
       var up = $('#grand').empty();
       var cat_id = $(this).val();    

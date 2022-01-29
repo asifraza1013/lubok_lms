@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use Log;
 
 class SettingController extends Controller
 {
@@ -50,8 +51,8 @@ class SettingController extends Controller
     {
 
       $request->validate([
-          'project_title' => 'required',
-          'APP_URL' => 'required',
+          'project_title' => 'nullable',
+          'APP_URL' => 'nullable',
           'favicon' => 'mimes:ico,png',
           'logo' => 'mimes:png,jpeg,jpg'
         ],
@@ -62,7 +63,6 @@ class SettingController extends Controller
         );
 
         $active = @file_get_contents(public_path().'/config.txt');
-
         if(!$active){
             $putS = 1;
             @file_put_contents(public_path().'/config.txt',$putS);
@@ -71,47 +71,48 @@ class SettingController extends Controller
        
         $d = \Request::getHost();
         $domain = str_replace("www.", "", $d); 
+        Log::info('DOMAIN- '.$domain);
+        return $this->extraupdate($request);
+        // if($domain == 'localhost' || strstr( $domain, '192.168.' ) || strstr( $domain, 'mediacity.co.in' ) || strstr($domain,'castleindia.in') || strstr($domain,'.test')){
+        //   return $this->extraupdate($request);
+        // }else{
 
-        if($domain == 'localhost' || strstr( $domain, '192.168.' ) || strstr( $domain, 'mediacity.co.in' ) || strstr($domain,'castleindia.in') || strstr($domain,'.test')){
-            return $this->extraupdate($request);
-        }else{
-
-          $token = (file_exists(public_path().'/intialize.txt') &&  @file_get_contents(public_path().'/intialize.txt') != null) ? @file_get_contents(public_path().'/intialize.txt') : 0;
+        //   $token = (file_exists(public_path().'/intialize.txt') &&  @file_get_contents(public_path().'/intialize.txt') != null) ? @file_get_contents(public_path().'/intialize.txt') : 0;
           
-          $code = (file_exists(public_path().'/code.txt') &&  @file_get_contents(public_path().'/code.txt') != null) ? @file_get_contents(public_path().'/code.txt') : 0;
+        //   $code = (file_exists(public_path().'/code.txt') &&  @file_get_contents(public_path().'/code.txt') != null) ? @file_get_contents(public_path().'/code.txt') : 0;
           
-            $ch = curl_init();
-            $options = array(
-              CURLOPT_URL => "https://mediacity.co.in/purchase/public/api/check/{$domain}",
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_TIMEOUT => 20, 
-              CURLOPT_HTTPHEADER => array(
-                    'Accept: application/json',
-                    "Authorization: Bearer ".$token
-              ),
-            );
+        //     $ch = curl_init();
+        //     $options = array(
+        //       CURLOPT_URL => "https://mediacity.co.in/purchase/public/api/check/{$domain}",
+        //       CURLOPT_RETURNTRANSFER => true,
+        //       CURLOPT_TIMEOUT => 20, 
+        //       CURLOPT_HTTPHEADER => array(
+        //             'Accept: application/json',
+        //             "Authorization: Bearer ".$token
+        //       ),
+        //     );
 
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
-            curl_setopt_array($ch, $options);
-            $response = curl_exec($ch);
+        //     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+        //     curl_setopt_array($ch, $options);
+        //     $response = curl_exec($ch);
         
-          if (curl_errno($ch) > 0) { 
-             $message = "Error connecting to API.";
-             return back()->with('delete',$message);
-          }
-          $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-          if ($responseCode == 200) {
-              $body = json_decode($response);
-              return $this->extraupdate($request);    
-          }
-          else{
-               $message = "Failed";
-               $putS = 0;
-               @file_put_contents(public_path().'/config.txt', $putS);
-               return redirect()->route('inactive');
-          }
-        }
+        //   if (curl_errno($ch) > 0) { 
+        //      $message = "Error connecting to API.";
+        //      return back()->with('delete',$message);
+        //   }
+        //   $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        //   if ($responseCode == 200) {
+        //       $body = json_decode($response);
+        //       return $this->extraupdate($request);    
+        //   }
+        //   else{
+        //        $message = "Failed";
+        //        $putS = 0;
+        //        @file_put_contents(public_path().'/config.txt', $putS);
+        //        return redirect()->route('inactive');
+        //   }
+        // }
         
       
     }
@@ -141,26 +142,26 @@ class SettingController extends Controller
         $setting->play_link = $request->play_link;
 
 
-        $env_update = $this->changeEnv([
-            'APP_NAME' => $string = preg_replace('/\s+/', '', $request->project_title),
-            'APP_URL' => $request->APP_URL,
+        // $env_update = $this->changeEnv([
+        //     'APP_NAME' => $string = preg_replace('/\s+/', '', $request->project_title),
+        //     'APP_URL' => $request->APP_URL,
             
-        ]);
+        // ]);
 
 
-        if(config('app.demolock') == 0){
+        // if(config('app.demolock') == 0){
 
-          if(isset($request->APP_DEBUG)){
-            $env_update = $this->changeEnv([
-              'APP_DEBUG' => 'true'
-            ]);
-          }else{
-            $env_update = $this->changeEnv([
-              'APP_DEBUG' => 'false'
-            ]);
-          }
+        //   if(isset($request->APP_DEBUG)){
+        //     $env_update = $this->changeEnv([
+        //       'APP_DEBUG' => 'true'
+        //     ]);
+        //   }else{
+        //     $env_update = $this->changeEnv([
+        //       'APP_DEBUG' => 'false'
+        //     ]);
+        //   }
 
-        }
+        // }
 
 
         if(config('app.demolock') == 0){

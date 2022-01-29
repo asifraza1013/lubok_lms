@@ -84,7 +84,7 @@ class CityController extends Controller
             Session::flash('delete',trans('flash.NoCitiesAvailable')); 
         }
         
-        return redirect('admin/city');
+        return redirect('city');
      }
 
     /**
@@ -146,7 +146,7 @@ class CityController extends Controller
       $city = City::find($id);
       $city->delete();
       Session::flash('success',trans('flash.DeletedSuccessfully'));
-      return redirect('admin/city');
+      return redirect('city');
     }
 
     public function addcity(Request $request)
@@ -173,6 +173,6 @@ class CityController extends Controller
         Session::flash('success',trans('flash.AddedSuccessfully'));
       
         
-        return redirect('admin/city');
+        return redirect('city');
     }
 }

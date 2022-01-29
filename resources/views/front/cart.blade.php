@@ -78,7 +78,7 @@
 					    	                      <button  type="submit" class="cart-remove-btn display-inline" title="Remove From cart">{{ __('frontstaticword.Remove') }}</button>
 					    	                    </form>
 											</span>
-											<span>
+											<!-- <span>
 												<form id="wishlist-form" method="post" action="{{ url('show/wishlist', $cart->id ) }}" data-parsley-validate class="form-horizontal form-label-left">
 					                                {{ csrf_field() }}
 
@@ -87,7 +87,7 @@
 
 					                                <button class="cart-wishlisht-btn" title="Add to wishlist" type="submit">{{ __('frontstaticword.AddtoWishlist') }}</button>
 					                            </form>
-											</span>
+											</span> -->
 											
 			                            </div>
 			                        </div>
@@ -168,7 +168,7 @@
 			                            @endif
 			                            
 
-			                            <li>{{ __('frontstaticword.CouponDiscount') }}
+			                            <!-- <li>{{ __('frontstaticword.CouponDiscount') }}
 			                            	@if( $cpn_discount == !NULL)
 			                            		@if($gsetting['currency_swipe'] == 1)
 			                            			<span class="categories-count">-&nbsp;<i class="{{ $currency->icon }}"></i>{{ $cpn_discount }}</span>
@@ -178,7 +178,7 @@
 			                            	@else
 			                            		<span class="categories-count"><a href="#" data-toggle="modal" data-target="#myModalCoupon" title="report">{{ __('frontstaticword.ApplyCoupon') }}</a></span>
 			                            	@endif
-			                            </li>
+			                            </li> -->
 			                            <li>{{ __('frontstaticword.DiscountPercent') }}<span class="categories-count">{{ round($offer_percent, 0) }}% {{ __('frontstaticword.off') }}</span></li>
 			                            <hr>
 			                            @if($gsetting['currency_swipe'] == 1)
@@ -213,7 +213,7 @@
 			                    @endif
 			                </div>
 			                <hr>
-			                <div class="coupon-apply">
+			                <!-- <div class="coupon-apply">
 								<form id="cart-form" method="post" action="{{url('apply/coupon')}}" 
 	                            	data-parsley-validate class="form-horizontal form-label-left">
 	    	                        {{ csrf_field() }}
@@ -228,7 +228,7 @@
 			                    		</div>
 			                    	</div>
 			                    </form>
-			                </div>
+			                </div> -->
 
 		                    @if(Session::has('fail'))
 	                    		<div class="alert alert-danger alert-dismissible fade show">

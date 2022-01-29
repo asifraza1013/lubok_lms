@@ -278,7 +278,7 @@
                                         <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                         <input type="hidden" name="course_id"  value="{{$course->id}}" />
 
-                                        <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlist') }}</button>
+                                        {{-- <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlist') }}</button> --}}
                                     </form>
                                 </li>
                             @else
@@ -290,12 +290,12 @@
                                         <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                         <input type="hidden" name="course_id"  value="{{$course->id}}" />
 
-                                        <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlisted') }}</button>
+                                        {{-- <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlisted') }}</button> --}}
                                     </form>
                                 </li>
                             @endif
                         @else
-                            <li class="about-icon-one"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlist') }}</a></li>
+                            {{-- <li class="about-icon-one"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlist') }}</a></li> --}}
                         @endif
                     </ul>
                 </div>
@@ -499,9 +499,9 @@
                             </div>
                             <hr>
 
-                            <div class="about-home-share text-center">
+                            {{-- <div class="about-home-share text-center">
                                 <a href="#" data-toggle="modal" data-target="#myModalshare" title="share"><i class="fa fa-share rgt-10"></i>{{ __('frontstaticword.share') }}</a>
-                            </div>
+                            </div> --}}
 
                             <!--Model start-->
                             <div class="modal fade" id="myModalshare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -1361,7 +1361,7 @@
                                                     <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                     <input type="hidden" name="course_id"  value="{{$item->id}}" />
 
-                                                    <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                    <!-- <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                 </form>
                                             </div>
                                         @else
@@ -1373,12 +1373,12 @@
                                                     <input type="hidden" name="user_id"  value="{{Auth::user()->id}}" />
                                                     <input type="hidden" name="course_id"  value="{{$item->id}}" />
 
-                                                    <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                    <!-- <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                 </form>
                                             </div>
                                         @endif
                                         @else
-                                            <div class="heart"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></div>
+                                        <!--  <div class="heart"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></div> -->
                                         @endif
                                         </li>
                                     </ul>
@@ -1931,7 +1931,7 @@
                                                     <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                     <input type="hidden" name="course_id"  value="{{$rel->course_id}}" />
 
-                                                    <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                    <!-- <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                 </form>
                                             </div>
                                         @else
@@ -1943,13 +1943,13 @@
                                                     <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
                                                     <input type="hidden" name="course_id"  value="{{$rel->course_id}}" />
 
-                                                    <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                    <!--  <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button> -->
                                                 </form>
                                             </div>
                                         @endif
                                         @else
                                             <div class="heart">
-                                                <a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a>
+                                                <!-- <a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a> -->
                                             </div>
                                         @endif
                                         {{-- Add to wishlisht end--}}

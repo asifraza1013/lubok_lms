@@ -15,7 +15,6 @@
             <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="hamburger">&#9776; </span>
             <div class="logo">
                
-
                 @if($gsetting->logo_type == 'L')
                     <a href="{{ url('/') }}" ><img src="{{ asset('images/logo/'.$gsetting->logo) }}" class="img-fluid" alt="logo"></a>
                 @else()
@@ -43,7 +42,7 @@
                     @endphp
                 </span>
             </div>
-            <div class="nav-wishlist">
+            <!-- <div class="nav-wishlist">
                 <div id="notification_li">
                     <a href="{{ url('send') }}" id="notificationLinkk" title="Notification"><i class="fa fa-bell"></i></a>
                     <span class="red-menu-badge red-bg-success">
@@ -95,7 +94,7 @@
                     <div id="notificationFooter"><a href="{{route('deleteNotification')}}">{{ __('frontstaticword.ClearAll') }}</a></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             @endauth
             
 
@@ -203,7 +202,7 @@
                         <a target="_blank" href="{{ url('/instructor') }}"><li><i class="fa fa-dashboard"></i>{{ __('frontstaticword.InstructorDashboard') }}</li></a>
                         @endif
                         <a href="{{ route('mycourse.show') }}"><li><i class="fa fa-diamond"></i>{{ __('frontstaticword.MyCourses') }}</li></a>
-                        <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a>
+                        <!-- <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a> -->
                         <a href="{{ route('purchase.show') }}"><li><i class="fa fa-shopping-cart"></i>{{ __('frontstaticword.PurchaseHistory') }}</li></a>
                         <a href="{{route('profile.show',Auth::User()->id)}}"><li ><i class="fa fa-user"></i>{{ __('frontstaticword.UserProfile') }}</li></a>
                         @if(Auth::User()->role == "user")
@@ -329,12 +328,12 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-6">
+                    <div class="col-lg-3 col-md-3 col-6">
                         <div class="learning-business">
                             <a href="{{ route('mycourse.show') }}" class="btn btn-link" title="My Course">{{ __('frontstaticword.MyCourses') }}</a>
                         </div>
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+                    <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">
                         <div class="nav-wishlist">
                             <ul id="nav">
                                 <li id="notification_li">
@@ -390,8 +389,8 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+                    </div> -->
+                    <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">
                         <div class="nav-wishlist">
                             <a href="{{ route('wishlist.show') }}" title="Go to Wishlist"><i class="fa fa-heart"></i></a>
                             <span class="red-menu-badge red-bg-success">
@@ -417,7 +416,7 @@
                                 @endphp
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-1 col-md-1 col-sm-2 col-2">
                         <div class="shopping-cart">
                             <a href="{{ route('cart.show') }}" title="Cart"><i class="flaticon-shopping-cart"></i></a>
@@ -482,7 +481,7 @@
                                 <a target="_blank" href="{{ url('/instructor') }}"><li><i class="fa fa-dashboard"></i>{{ __('frontstaticword.InstructorDashboard') }}</li></a>
                                 @endif
                                 <a href="{{ route('mycourse.show') }}"><li><i class="fa fa-diamond"></i>{{ __('frontstaticword.MyCourses') }}</li></a>
-                                <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a>
+                                <!-- <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a> -->
                                 <a href="{{ route('purchase.show') }}"><li><i class="fa fa-shopping-cart"></i>{{ __('frontstaticword.PurchaseHistory') }}</li></a>
                                 <a href="{{route('profile.show',Auth::User()->id)}}"><li ><i class="fa fa-user"></i>{{ __('frontstaticword.UserProfile') }}</li></a>
                                 @if(Auth::User()->role == "user")

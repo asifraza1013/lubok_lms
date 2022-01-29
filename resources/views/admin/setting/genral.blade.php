@@ -156,7 +156,7 @@
 
 	
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label for="project_title">{{ __('adminstaticword.ProjectTitle') }}:<sup class="redstar">*</sup></label>
@@ -179,9 +179,9 @@
             <br>
 		</div>
 		
-	</div>
+	</div> -->
 
-	<div class="row">
+	<!-- <div class="row">
 		
 		<div class="col-md-6">
 			<label for="phone">{{ __('adminstaticword.Contact') }}:<sup class="redstar">*</sup></label>
@@ -192,9 +192,9 @@
             <input value="{{ $setting->wel_email }}" name="wel_email" placeholder="Enter your email" type="text" class="{{ $errors->has('wel_email') ? ' is-invalid' : '' }} form-control" required>
 		</div>
 	</div>
-	<br>
+	<br> -->
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-6">
             <label for="cpy_txt">{{ __('adminstaticword.CopyrightText') }}:<sup class="redstar">*</sup></label>
             <input value="{{ $setting->cpy_txt }}" name="cpy_txt" placeholder="Enter Copyright Text" type="text" required class="{{ $errors->has('cpy_txt') ? ' is-invalid' : '' }} form-control">
@@ -683,7 +683,7 @@
 
     
 	<br>
-	<br>
+	<br> -->
 	
 	<div class="box-footer">
 		<button type="Submit" class="btn btn-lg col-md-3 btn-primary btn-md"><i class="fa fa-save"></i> {{ __('adminstaticword.Save') }}</button>

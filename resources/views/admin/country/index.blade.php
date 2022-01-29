@@ -9,7 +9,7 @@
       <div class="box box-primary" >
         <div class="box-header with-border">
           <h3 class="box-title">Country</h3>
-          <a href=" {{url('admin/country/create')}} " class="btn btn-info btn-sm">+ Add Country</a> 
+          <a href=" {{url('country/create')}} " class="btn btn-info btn-sm">+ Add Country</a> 
         </div>
          
 
@@ -38,11 +38,11 @@
                     <td>{{ $country->iso }}</td>
                     <td>{{ $country->iso3 }}</td>
                     <td>
-                      <a class="btn btn-success btn-sm" href="{{url('admin/country/'.$country->id. '/edit')}}">
+                      <a class="btn btn-success btn-sm" href="{{url('country/'.$country->id. '/edit')}}">
 
                         <i class="glyphicon glyphicon-pencil"></i></a>
                     </td>
-                    <td><form  method="post" action="{{url('admin/country/'.$country->id)}}
+                    <td><form  method="post" action="{{url('country/'.$country->id)}}
                         "data-parsley-validate class="form-horizontal form-label-left">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}

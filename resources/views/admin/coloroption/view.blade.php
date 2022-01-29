@@ -13,7 +13,7 @@
              {{ __('adminstaticword.Reset') }}</a>
            		</div>
 	          	<div class="panel-body">
-	          		<form action="{{ url('admin/coloroption/update') }}" method="POST" enctype="multipart/form-data">
+	          		<form action="{{ url('coloroption/update') }}" method="POST" enctype="multipart/form-data">
 		                @csrf
 
 
@@ -32,7 +32,7 @@
 				                    <div class="form-group">
 					                    <label for="blue_bg">{{ __('adminstaticword.BlueBackground') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="blue_bg" value="{{ $color['blue_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="blue_bg" value="{{ (!empty($color)) ? $color['blue_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -59,7 +59,7 @@
 				                    <div class="form-group">
 					                    <label for="red_bg">{{ __('adminstaticword.RedBackground') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="red_bg" value="{{ $color['red_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="red_bg" value="{{ (!empty($color)) ?  $color['red_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -84,7 +84,7 @@
 				                    <div class="form-group">
 					                    <label for="grey_bg">{{ __('Grey Background') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="grey_bg" value="{{ $color['grey_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="grey_bg" value="{{ (!empty($color)) ? $color['grey_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -109,7 +109,7 @@
 				                    <div class="form-group">
 					                    <label for="light_grey_bg">{{ __('Light Grey Background') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="light_grey_bg" value="{{ $color['light_grey_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="light_grey_bg" value="{{ (!empty($color)) ? $color['light_grey_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -134,7 +134,7 @@
 				                    <div class="form-group">
 					                    <label for="black_bg">{{ __('Black Background') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="black_bg" value="{{ $color['black_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="black_bg" value="{{ (!empty($color)) ? $color['black_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -159,7 +159,7 @@
 				                    <div class="form-group">
 					                    <label for="white_bg">{{ __('White Background') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="white_bg" value="{{ $color['white_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="white_bg" value="{{ (!empty($color)) ? $color['white_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -184,7 +184,7 @@
 				                    <div class="form-group">
 					                    <label for="dark_red_bg">{{ __('Deep Red Background') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="dark_red_bg" value="{{ $color['dark_red_bg'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="dark_red_bg" value="{{ (!empty($color)) ? $color['dark_red_bg'] : null }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>
@@ -225,7 +225,7 @@
 				                    <div class="form-group">
 					                    <label for="black_text">{{ __('Black Text') }}:</label>
 					                    <div class="input-group my-colorpicker2">
-					                     	<input type="text" name="black_text" value="{{ $color['black_text'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
+					                     	<input type="text" name="black_text" value="{{  $color['black_text'] }}" class="form-control my-colorpicker1"  placeholder="Choose color" required>
 
 					                     	<div class="input-group-addon">
 		                    				<i></i>

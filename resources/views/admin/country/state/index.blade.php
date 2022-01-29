@@ -19,7 +19,7 @@
 	    <div class="box box-primary" >
 	      <div class="box-header with-border">
 	        <h3 class="box-title">{{ __('adminstaticword.State') }}</h3>
-	        <a href=" {{url('admin/state/create')}} " class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.State') }}</a> 
+	        <a href=" {{url('state/create')}} " class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.State') }}</a> 
 
 	        <a data-toggle="modal" data-target="#myModalcity" href="#" class="btn btn-info btn-sm">+ {{ __('adminstaticword.Add') }} {{ __('adminstaticword.StateManual') }}</a>
 	      </div>
@@ -45,7 +45,7 @@
 			                  <td>{{ $state->name }}</td>
 			                  <td>@if(isset($state->country)) {{ $state->country->nicename }} @endif</td>
 			                  
-			                  <td><form  method="post" action="{{url('admin/state/'.$state->id)}}" data-parsley-validate class="form-horizontal form-label-left">
+			                  <td><form  method="post" action="{{url('state/'.$state->id)}}" data-parsley-validate class="form-horizontal form-label-left">
 			                      {{ csrf_field() }}
 			                      {{ method_field('DELETE') }}
 			                       <button  type="submit" class="btn btn-danger" onclick="return confirm('Delete This User..?)" ><i class="fa fa-fw fa-trash-o"></i></button>

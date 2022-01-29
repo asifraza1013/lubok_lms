@@ -21,10 +21,10 @@
             <div class="box-header with-border">
               <h3 class="box-title"> {{ __('adminstaticword.Add') }} {{ __('adminstaticword.Country') }}</h3>
               <div class="panel-heading">
-                <a href=" {{url('admin/country')}} " class="btn btn-success pull-right owtbtn">< {{ __('adminstaticword.Back') }}</a> 
+                <a href=" {{url('country')}} " class="btn btn-success pull-right owtbtn">< {{ __('adminstaticword.Back') }}</a> 
               </div>
 
-              <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('admin/country')}}" data-parsley-validate 
+              <form id="demo-form2" method="post" enctype="multipart/form-data" action="{{url('country')}}" data-parsley-validate 
                   class="form-horizontal form-label-left">
                 {{csrf_field()}}
 
