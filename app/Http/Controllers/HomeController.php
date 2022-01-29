@@ -46,7 +46,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
+        return redirect(route('login'));
         $category = Categories::orderBy('position','ASC')->get();
         $sliders = Slider::orderBy('position', 'ASC')->get();
         $facts = SliderFacts::limit(3)->get();
