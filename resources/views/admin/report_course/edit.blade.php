@@ -11,7 +11,7 @@
 	          	<h3 class="box-title">{{ __('adminstaticword.Edit') }} {{ __('adminstaticword.ReportCourse') }}</h3>
 	       		</div>
 	          	<div class="panel-body">
-	          		<form action="{{url('user/course/report/'.$show->id)}}" method="POST">
+	          		<form action="{{url('course/report/'.$show->id)}}" method="POST">
 		                {{ csrf_field() }}
 		                {{ method_field('PUT') }}
 						

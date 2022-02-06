@@ -20,7 +20,7 @@
 	<!-- Main row -->
     @include('sweetalert::alert')
     <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
@@ -46,7 +46,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
@@ -72,7 +72,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
@@ -98,7 +98,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -121,109 +121,6 @@
               <i class="flaticon-shopping-cart-1"></i>
             </div>
             <a href="{{url('order')}}" class="small-box-footer">{{ __('adminstaticword.Moreinfo') }} <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-              <h3>
-              	@php
-              		$faq = App\FaqStudent::all();
-              		if(count($faq)>0){
-
-              			echo count($faq);
-              		}
-              		else{
-
-              			echo "0";
-              		}
-              	@endphp
-              </h3>
-              <p>{{ __('adminstaticword.Faqs') }}</p>
-            </div>
-            <div class="icon">
-              <i class="flaticon-faq"></i>
-            </div>
-            <a href="{{url('faq')}}" class="small-box-footer">{{ __('adminstaticword.Moreinfo') }} <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-orange">
-            <div class="inner">
-              <h3>@php
-              		$review = App\Page::all();
-              		if(count($review)>0){
-
-              			echo count($review);
-              		}
-              		else{
-
-              			echo "0";
-              		}
-              	@endphp
-              </h3>
-              <p>{{ __('adminstaticword.Pages') }}</p>
-            </div>
-            <div class="icon">
-             <i class="flaticon-report"></i>
-            </div>
-            <a href="{{ url('page') }}" class="small-box-footer">{{ __('adminstaticword.Moreinfo') }} <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>
-                @php
-              		$review = App\Instructor::all();
-              		if(count($review)>0){
-
-              			echo count($review);
-              		}
-              		else{
-
-              			echo "0";
-              		}
-              	@endphp
-              </h3>
-              <p>{{ __('adminstaticword.Instructors') }}</p>
-            </div>
-            <div class="icon">
-             <i class="flaticon-teacher"></i>
-            </div>
-            <a href="{{route('all.instructor')}}" class="small-box-footer">{{ __('adminstaticword.Moreinfo') }} <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-blue">
-            <div class="inner">
-              <h3>
-                @php
-              		$review = App\Testimonial::all();
-              		if(count($review)>0){
-
-              			echo count($review);
-              		}
-              		else{
-
-              			echo "0";
-              		}
-              	@endphp
-              </h3>
-              <p>{{ __('adminstaticword.Testimonials') }}</p>
-            </div>
-            <div class="icon">
-             <i class="flaticon-customer-1"></i>
-            </div>
-            <a href="{{url('testimonial')}}" class="small-box-footer">{{ __('adminstaticword.Moreinfo') }} <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

@@ -250,6 +250,7 @@ Route::middleware(['web'])->group(function () {
             
 
             Route::resource('report/view','CourseReportController');
+            Route::get('report/view/detail/{id}','CourseReportController@show')->name('view.report.show');
 
             Route::get('banktransfer', 'BankTransferController@show')->name('bank.transfer');
             Route::put('banktransfer/update', 'BankTransferController@update');

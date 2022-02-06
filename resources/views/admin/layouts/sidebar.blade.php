@@ -41,7 +41,7 @@
             </ul>
           </li>
 
-          <li class="{{ Nav::isResource('currency') }}"><a href="{{url('currency')}}"> <i class="flaticon-wallet"></i><span>{{ __('adminstaticword.Currency') }}</span></a></li>
+          <!-- <li class="{{ Nav::isResource('currency') }}"><a href="{{url('currency')}}"> <i class="flaticon-wallet"></i><span>{{ __('adminstaticword.Currency') }}</span></a></li> -->
          
 
           <li class="{{ Nav::isResource('category') }} {{ Nav::isResource('subcategory') }} {{ Nav::isResource('childcategory') }} {{ Nav::isResource('course') }} {{ Nav::isResource('bundle') }} {{ Nav::isResource('courselang') }} {{ Nav::isResource('coursereview') }} {{ Nav::isRoute('assignment.view') }} {{ Nav::isResource('refundpolicy') }} {{ Nav::isResource('batch') }} treeview">
@@ -74,7 +74,7 @@
 
                   <!-- <li class="{{ Nav::isResource('refundpolicy') }}"><a href="{{url('refundpolicy')}}"><i class="flaticon-rate" aria-hidden="true"></i><span>{{ __('adminstaticword.RefundPolicy') }}</span></a></li> -->
 
-                  <li class="{{ Nav::isResource('batch') }}"><a href="{{url('batch')}}"><i class="flaticon-interface" aria-hidden="true"></i><span>{{ __('adminstaticword.Batch') }}</span></a></li>
+                  <!-- <li class="{{ Nav::isResource('batch') }}"><a href="{{url('batch')}}"><i class="flaticon-interface" aria-hidden="true"></i><span>{{ __('adminstaticword.Batch') }}</span></a></li> -->
 
                   <!-- <li class="{{ Nav::isRoute('Quiz.review') }}"><a href="{{route('quiz.review')}}"><i class="flaticon-translation" aria-hidden="true"></i><span>{{ __('adminstaticword.QuizReview') }}</span></a></li> -->
 
@@ -112,7 +112,7 @@
           </li> -->
 
           
-          <li class="{{ Nav::isRoute('all.instructor') }}"><a href="{{route('all.instructor')}}"><i class="flaticon-customer"></i>{{ __('adminstaticword.AllInstructor') }}</a></li>
+          <!-- <li class="{{ Nav::isRoute('all.instructor') }}"><a href="{{route('all.instructor')}}"><i class="flaticon-customer"></i>{{ __('adminstaticword.AllInstructor') }}</a></li> -->
           <!-- <li class="{{ Nav::isResource('subscription/plan') }} {{ Nav::isResource('orders/subscription') }} {{ Nav::isRoute('all.instructor') }} {{ Nav::isResource('requestinstructor') }} treeview">
            <a href="#">
              <i class="flaticon-teacher" aria-hidden="true"></i> <span>{{ __('adminstaticword.Instructors') }}</span>
@@ -161,7 +161,7 @@
     
           <!-- <li class="{{ Nav::isResource('page') }}"><a href="{{url('page')}}"><i class="flaticon-computer" aria-hidden="true"></i><span>{{ __('adminstaticword.Pages') }}</span></a></li> -->
 
-          <li class="{{ Nav::isResource('faq') }} {{ Nav::isResource('faqinstructor') }}  treeview">
+          <!-- <li class="{{ Nav::isResource('faq') }} {{ Nav::isResource('faqinstructor') }}  treeview">
            <a href="#">
              <i class="flaticon-faq" aria-hidden="true"></i> <span>{{ __('adminstaticword.Faq') }}</span>
               <span class="pull-right-container">
@@ -172,7 +172,7 @@
               <li class="{{ Nav::isResource('faq') }}"><a href="{{url('faq')}}"><i class="flaticon-chat"></i>{{ __('adminstaticword.FaqStudent') }}</a></li>
               <li class="{{ Nav::isResource('faqinstructor') }}"><a href="{{url('faqinstructor')}}"><i class="flaticon-question"></i>{{ __('adminstaticword.FaqInstructor') }}</a></li>
             </ul>
-          </li>
+          </li> -->
 
           
 
@@ -185,7 +185,7 @@
             </a>
             <ul class="treeview-menu">
               <li class="{{ Nav::isResource('admin/report/view') }}"><a href="{{url('report/view')}}"><i class="flaticon-error"></i><span>{{ __('adminstaticword.Report') }} Course</span></a></li>
-              <li class="{{ Nav::isResource('user/question/report') }}"><a href="{{url('user/question/report')}}"><i class="flaticon-question-mark"></i><span>{{ __('adminstaticword.Report') }} Question</span></a></li>
+              <!-- <li class="{{ Nav::isResource('user/question/report') }}"><a href="{{url('user/question/report')}}"><i class="flaticon-question-mark"></i><span>{{ __('adminstaticword.Report') }} Question</span></a></li> -->
             </ul>
           </li>
 
@@ -219,7 +219,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="{{ Nav::isRoute('gen.set') }}"><a href="{{route('gen.set')}}"><i class="flaticon-admin"></i><span>{{ __('adminstaticword.Setting') }}</span></a></li>
+              <!-- <li class="{{ Nav::isRoute('gen.set') }}"><a href="{{route('gen.set')}}"><i class="flaticon-admin"></i><span>{{ __('adminstaticword.Setting') }}</span></a></li> -->
               <!-- <li class="{{ Nav::isRoute('api.setApiView') }}"><a href="{{route('api.setApiView')}}"><i class="flaticon-report"></i>{{ __('adminstaticword.APISetting') }}</a></li> -->
 
               @if(Module::has('Mpesa') && Module::find('Mpesa')->isEnabled())
@@ -228,8 +228,8 @@
               @endif
               
               <li class="{{ Nav::isResource('blog') }}"><a href="{{url('blog')}}"><i class="flaticon-real-state"></i>{{ __('adminstaticword.Blog') }}</a></li>
-              <!-- <li class="{{ Nav::isRoute('about.page') }}"><a href="{{route('about.page')}}"><i class="flaticon-book"></i>{{ __('adminstaticword.About') }}</a></li> -->
-              <!-- <li class="{{ Nav::isRoute('careers.page') }}"><a href="{{route('careers.page')}}"><i class="flaticon-mobile-marketing"></i>{{ __('adminstaticword.Career') }}</a></li> -->
+              <li class="{{ Nav::isRoute('about.page') }}"><a href="{{route('about.page')}}"><i class="flaticon-book"></i>{{ __('adminstaticword.About') }}</a></li>
+              <li class="{{ Nav::isRoute('careers.page') }}"><a href="{{route('careers.page')}}"><i class="flaticon-mobile-marketing"></i>{{ __('adminstaticword.Career') }}</a></li>
               <!-- <li class="{{ Nav::isRoute('comingsoon.page') }}"><a href="{{route('comingsoon.page')}}"><i class="flaticon-fast-time"></i>{{ __('adminstaticword.ComingSoon') }}</a></li> -->
               <li class="{{ Nav::isRoute('termscondition') }}"><a href="{{route('termscondition')}}"><i class="flaticon-terms-and-conditions"></i>{{ __('adminstaticword.Terms&Condition') }} </a></li>
               <li class="{{ Nav::isRoute('policy') }}"><a href="{{route('policy')}}"><i class="flaticon-smartphone"></i> {{ __('adminstaticword.PrivacyPolicy') }}</a></li>
@@ -256,7 +256,7 @@
 
               <!-- <li class="{{ Nav::isRoute('get.api.key') }}"><a href="{{route('get.api.key')}}"><i class="flaticon-test" aria-hidden="true"></i><span>{{ __('adminstaticword.GetAPIKeys') }}</span></a></li> -->
 
-              <li class="{{ Nav::isRoute('show.lang') }}"><a href="{{route('show.lang')}}"><i class="flaticon-translation" aria-hidden="true"></i><span>{{ __('adminstaticword.Language') }}</span></a></li>
+              <!-- <li class="{{ Nav::isRoute('show.lang') }}"><a href="{{route('show.lang')}}"><i class="flaticon-translation" aria-hidden="true"></i><span>{{ __('adminstaticword.Language') }}</span></a></li> -->
 
               <!-- <li class="{{ Nav::isRoute('maileclipse/mailables') }}"><a href="{{ url('maileclipse/mailables') }}"><i class="fa fa-clone" aria-hidden="true"></i><span>{{ __('adminstaticword.EmailSettings') }}{{ __('') }}</span></a></li> -->
              

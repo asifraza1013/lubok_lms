@@ -43,15 +43,15 @@
 	                <div class="dashboard-items">
 	                    <ul>
 	                        <li><i class="fa fa-bookmark"></i><a href="{{ route('mycourse.show') }}" title="Dashboard">{{ __('frontstaticword.MyCourses') }}</a></li>
-	                        <li><i class="fa fa-heart"></i><a href="{{ route('wishlist.show') }}" title="Profile Update">{{ __('frontstaticword.MyWishlist') }}</a></li>
+	                        <!-- <li><i class="fa fa-heart"></i><a href="{{ route('wishlist.show') }}" title="Profile Update">{{ __('frontstaticword.MyWishlist') }}</a></li> -->
 	                        <li><i class="fa fa-history"></i><a href="{{ route('purchase.show') }}" title="Followers">{{ __('frontstaticword.PurchaseHistory') }}</a></li>
 	                        <li><i class="fa fa-user"></i><a href="{{route('profile.show',Auth::User()->id)}}" title="Upload Items">{{ __('frontstaticword.UserProfile') }}</a></li>
-	                        @if(Auth::User()->role == "user")
+	                        <!-- @if(Auth::User()->role == "user")
 	                        <li><i class="fas fa-chalkboard-teacher"></i><a href="#" data-toggle="modal" data-target="#myModalinstructor" title="Become An Instructor">{{ __('frontstaticword.BecomeAnInstructor') }}</a></li>
-	                        @endif
-	                        <li><i class="fa fa-bank"></i><a href="{{ url('bankdetail') }}" title="Upload Items">{{ __('frontstaticword.MyBankDetails') }}</a></li>
+	                        @endif -->
+	                        <!-- <li><i class="fa fa-bank"></i><a href="{{ url('bankdetail') }}" title="Upload Items">{{ __('frontstaticword.MyBankDetails') }}</a></li> -->
 
-	                        <li><i class="fa fa-check"></i><a href="{{ route('2fa.show') }}" title="2FactAuth">{{ __('frontstaticword.2FactorAuth') }}</a></li>
+	                        <!-- <li><i class="fa fa-check"></i><a href="{{ route('2fa.show') }}" title="2FactAuth">{{ __('frontstaticword.2FactorAuth') }}</a></li> -->
 	                    </ul>
 	                </div>
 	            </div>

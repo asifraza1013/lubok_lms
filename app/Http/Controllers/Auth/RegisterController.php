@@ -177,6 +177,7 @@ class RegisterController extends Controller
                 'lname' => $data['lname'],
                 'email' => $data['email'],
                 'mobile' => $mobile,
+                'status' => 0,
                 'email_verified_at'  => $verified,
                 'password' => Hash::make($data['password']),
             ]);

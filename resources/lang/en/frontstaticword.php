@@ -376,8 +376,8 @@ return [
     'HightoLow' => 'High to Low',
     'Paid' => 'Paid',
     'PreviousPapers' => 'Previous Papers',
-    'AllPapers' => 'All Papers'
-    
+    'AllPapers' => 'All Papers',
+    'QuickLink' => 'Quick Link'
     
 
 ];

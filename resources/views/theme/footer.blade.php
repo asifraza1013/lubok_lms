@@ -32,7 +32,7 @@
                 </div>
                 @if(isset($widgets))
 
-                <div class="col-lg-2 col-md-6 col-4">
+                <div class="col-lg-2 col-md-6 col-4 offset-lg-4">
                     <div class="widget"><b>{{ $widgets->widget_one }}</b></div>
                     <div class="footer-link">
                         <ul>
@@ -61,7 +61,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-4">
+                <!-- <div class="col-lg-2 col-md-6 col-4">
                     <div class="widget"><b>{{ $widgets->widget_three }}</b></div>
                     <div class="footer-link">
                         <ul>
@@ -80,9 +80,9 @@
                             
                         </ul>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-2 col-md-6">
+                <!-- <div class="col-lg-2 col-md-6">
 
                     @php
                         $languages = App\Language::all(); 
@@ -101,7 +101,7 @@
                     </div>
                     @endif
 
-                </div>
+                </div> -->
                 @endif
                 
             </div>
