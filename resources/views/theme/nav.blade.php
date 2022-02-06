@@ -18,7 +18,14 @@
                 @if($gsetting->logo_type == 'L')
                     <a href="{{ url('/') }}" ><img src="{{ asset('images/logo/'.$gsetting->logo) }}" class="img-fluid" alt="logo"></a>
                 @else()
-                    <a href="{{ url('/') }}"><b><div class="logotext">{{ $gsetting->project_title }}</div></b></a>
+                    <a href="{{ url('/') }}">
+                        <b>
+                            <div class="logotext">
+                                <img src="{{asset('images/lubok_logo.jpeg')}}" class="img-fluid" alt="">
+                                <span style="color:#330000">{{ $gsetting->project_title }}</span>
+                            </div>
+                        </b>
+                    </a>
                 @endif
             </div>
             <div class="nav-search nav-wishlist">
@@ -232,18 +239,25 @@
         <div class="row smallscreen-search-block">
             <div class="col-lg-5">
                 <div class="row">
-                    <div class="col-lg-6 col-md-4 col-sm-12">
+                    <div class="col-lg-7 col-md-4 col-sm-12">
                         <div class="logo">
                             
 
                             @if($gsetting->logo_type == 'L')
                                 <a href="{{ url('/') }}" ><img src="{{ asset('images/logo/'.$gsetting->logo) }}" class="img-fluid" alt="logo"></a>
                             @else()
-                                <a href="{{ url('/') }}"><b><div class="logotext">{{ $gsetting->project_title }}</div></b></a>
+                                <a href="{{ url('/') }}">
+                                    <b>
+                                        <div class="logotext">
+                                            <img src="{{asset('images/lubok_logo.jpeg')}}" class="img-fluid" alt="">
+                                            <span style="color: #330000;">{{ $gsetting->project_title }}</span>
+                                        </div>
+                                    </b>
+                                </a>
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-sm-12">
+                    <div class="col-lg-5 col-md-4 col-sm-12">
                         <div class="navigation">
                             <div id="cssmenu">
                                 <ul>
@@ -278,6 +292,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
+                                    <li ><a  href="{{route('blog.all')}}"><i class="flaticon-grid"></i>{{ __('frontstaticword.Blog') }}</a></li>
                                 </ul>
                             </div>
                         </div>
