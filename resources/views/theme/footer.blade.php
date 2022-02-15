@@ -13,8 +13,11 @@
                             <a href="{{ url('/') }}" title="logo"><img src="{{ asset('images/logo/'.$gsetting->footer_logo) }}" alt="logo" class="img-fluid" ></a>
                             @endif
                         @else()
-                            <a href="{{ url('/') }}"><b>{{ $gsetting->project_title }}</b></a>
+                            <a href="{{ url('/') }}"><b style="color: white;">{{ $gsetting->project_title }}</b></a>
                         @endif
+                        <p class="text-muted bold mt-2">{{$gsetting->default_address}}</p>
+                        <p class="text-muted bold">{{$gsetting->default_phone}}</p>
+                        <p class="text-muted bold">{{$gsetting->wel_email}}</p>
                     </div>
 
                     

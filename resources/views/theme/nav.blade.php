@@ -8,7 +8,7 @@
 <div id="promo-tab" class="display-none">SHOW</div>
 @endif
 
-<section id="nav-bar" class="nav-bar-main-block">
+<section id="nav-bar" class="nav-bar-main-block" style="background-color: #170202;">
     <div class="container">
         <!-- start navigation -->
         <div class="navigation fullscreen-search-block">
@@ -250,7 +250,7 @@
                                     <b>
                                         <div class="logotext">
                                             <img src="{{asset('images/lubok_logo.jpeg')}}" class="img-fluid" alt="">
-                                            <span style="color: #330000;">{{ $gsetting->project_title }}</span>
+                                            <span style="color:white;">{{ $gsetting->project_title }}</span>
                                         </div>
                                     </b>
                                 </a>
@@ -345,7 +345,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-6">
                         <div class="learning-business">
-                            <a href="{{ route('mycourse.show') }}" class="btn btn-link" title="My Course">{{ __('frontstaticword.MyCourses') }}</a>
+                            <a href="{{ route('mycourse.show') }}" class="btn btn-link text-white"  title="My Course">{{ __('frontstaticword.MyCourses') }}</a>
                         </div>
                     </div>
                     <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">

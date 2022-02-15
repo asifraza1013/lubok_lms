@@ -3,7 +3,13 @@
 @section('content')
 
 @include('admin.message')
-
+<style>
+    .about-nav-heading{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
 <!-- about-home start -->
 @if($about['one_enable'] == 1)
 <section id="about-home-one" class="about-home-one-main-block" style="background-image: url('{{ asset('images/about/'.$about->one_image) }}')">
@@ -42,7 +48,7 @@
                         <li class="nav-item">
                           <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">
                             <img src="{{ asset('images/about/'.$about->two_imageone) }}" class="img-fluid tab-img" alt="about-img">
-                            <div class="about-nav-heading active">{{ $about->two_txtone }}</div>
+                            <div class="about-nav-heading active"><p>{{ $about->two_txtone }}</p></div>
                           </a>
                         </li>
                         <li class="nav-item">

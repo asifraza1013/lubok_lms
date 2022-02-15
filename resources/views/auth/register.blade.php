@@ -189,6 +189,8 @@
                     <hr>
                     <div class="sign-up text-center">{{ __('frontstaticword.Alreadyhaveanaccount') }}?<a href="{{ route('login') }}" title="sign-up"> {{ __('frontstaticword.Login') }}</a>
                     </div>
+                    <div class="sign-up text-center mt-5"><strong style="font-size: 28px;color: green;">COMING SOON:</strong><span class="text-muted" style="font-size: 15px;">Buy NFT LubokHarta to join</span></a>
+                    </div>
                 </form>
 
 

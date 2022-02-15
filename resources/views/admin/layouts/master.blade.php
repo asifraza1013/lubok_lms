@@ -106,14 +106,14 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="{{ url('/') }}" class="logo">
+      <a href="{{ url('/') }}" class="logo" style="background-color: #170202;">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini">
         <img title="{{ $project_title }}" width="20px" src="{{ url('images/favicon/'.$gsetting->favicon) }}" alt=""/>
       </span>
       <!-- logo for regular state and mobile devices -->
       <!-- <span class="logo-lg"> <img title="{{ $project_title }}" width="100px" src="{{ url('images/logo/'.$gsetting->logo) }}" alt=""/></span> -->
-      <span class="logo-lg"> <strong style="color: #49aa43;">{{$project_title}}</strong></span>
+      <span class="logo-lg"> <strong style="color: white;">{{$project_title}}</strong></span>
     </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
