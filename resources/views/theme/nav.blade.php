@@ -292,7 +292,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li ><a  href="{{route('blog.all')}}"><i class="flaticon-grid"></i>{{ __('frontstaticword.Blog') }}</a></li>
+                                    <!-- <li ><a  href="{{route('blog.all')}}"><i class="flaticon-grid"></i>{{ __('frontstaticword.Blog') }}</a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -334,7 +334,7 @@
 
                 @auth
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-6">
+                    <!-- <div class="col-lg-3 col-md-3 col-6">
                         <div class="learning-business learning-business-two">
                             @if(Auth::User()->role == "user")
                                 @if($gsetting->instructor_enable == 1)
@@ -342,10 +342,11 @@
                                 @endif
                             @endif
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-6">
+                    </div> -->
+                    <div class="col-lg-6 col-md-6 col-6 mt-2">
                         <div class="learning-business">
-                            <a href="{{ route('mycourse.show') }}" class="btn btn-link text-white"  title="My Course">{{ __('frontstaticword.MyCourses') }}</a>
+                            <a  class="text-white" href="{{route('blog.all')}}"><i class="flaticon-grid mr-1" style="color: #d79618;"></i>{{ __('frontstaticword.Blog') }}</a>
+                            <!-- <a href="{{ route('mycourse.show') }}" class="btn btn-link text-white"  title="My Course">{{ __('frontstaticword.MyCourses') }}</a> -->
                         </div>
                     </div>
                     <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">
@@ -432,7 +433,7 @@
                             </span>
                         </div>
                     </div> -->
-                    <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+                    <div class="col-lg-1 col-md-1 col-sm-2 col-2 offset-lg-1">
                         <div class="shopping-cart">
                             <a href="{{ route('cart.show') }}" title="Cart"><i class="flaticon-shopping-cart"></i></a>
                             <span class="red-menu-badge red-bg-success">

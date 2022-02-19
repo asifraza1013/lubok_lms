@@ -7,7 +7,9 @@
   Description: A default stylesheet for eClass - Learning Management System.
   Version: 3.4
 */
-
+:root {
+  --dark-brow: darkgray
+}
 /*=======================================================================
               [Table of Contents]
 =========================================================================
@@ -955,6 +957,11 @@ sup.redstar {
 }
 .student-heading {
   color: var(--text-light-grey-color);
+  font-size: 28px;
+  font-weight: bolder;
+}
+.bolder{
+  font-weight: bolder;
 }
 .view-dtl {
   padding: 10px;
@@ -996,7 +1003,8 @@ sup.redstar {
 }
 .view-heading {
   font-size: 16px;
-  color: var(--text-black-color);
+  /* color: var(--text-black-color); */
+  color: darkgray !important;
   font-weight: 500;
 }
 .view-heading a {
@@ -1006,11 +1014,12 @@ sup.redstar {
 }
 .view-dtl p {
   font-size: 8px;
-  color: var(--text-dark-grey-color);
+  color: var(--dark-brow);
 }
 .view-dtl .rating ul li {
   display: inline-flex;
-  color: var(--text-light-grey-color);
+  color: var(--dark-brow);
+  /* color: var(--text-light-grey-color); */
   font-size: 14px;
   vertical-align: text-bottom;
 }

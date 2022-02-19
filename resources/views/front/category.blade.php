@@ -4,7 +4,7 @@
 @section('content')
 @include('admin.message')
 <!-- categories-tab start-->
-<section id="categories-tab" class="categories-tab-main-block">
+<!-- <section id="categories-tab" class="categories-tab-main-block">
     <div class="container">
         <div id="categories-tab-slider" class="categories-tab-block owl-carousel">
             @php
@@ -19,7 +19,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> -->
 <!-- categories-tab end-->
 <!-- category-title start -->
 <section id="business-home" class="business-home-main-block">

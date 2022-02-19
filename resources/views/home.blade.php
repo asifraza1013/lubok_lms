@@ -29,7 +29,7 @@
 @endsection
 
 <!-- categories-tab start-->
-<section id="categories-tab" class="categories-tab-main-block">
+<!-- <section id="categories-tab" class="categories-tab-main-block">
     <div class="container">
         <div id="categories-tab-slider" class="categories-tab-block owl-carousel">
            
@@ -42,7 +42,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> -->
 <!-- categories-tab end-->
 
 @if(isset($sliders))
@@ -558,7 +558,7 @@ else{
 @if(isset($categories))
 <section id="learning-courses" class="learning-courses-main-block">
     <div class="container">
-        <h4 class="student-heading">{{ __('frontstaticword.RecentCourses') }}</h4>
+        <h4 class="student-heading bolder">{{ __('frontstaticword.RecentCourses') }}</h4>
         <div class="row">
             
             <div class="col-lg-12">
@@ -571,7 +571,7 @@ else{
                         @endphp
                         @if(isset($cats))
                         @if($cats['status'] == 1)
-                            <li class="btn nav-item" ><a class="nav-item nav-link" id="home-tab" data-toggle="tab" href="#content-tabs" role="tab" aria-controls="home" onclick="showtab('{{ $cats->id }}')" aria-selected="true">{{ $cats['title'] }}</a></li>
+                            <li class="btn nav-item" ><a class="nav-item nav-link" id="home-tab" data-toggle="tab" href="#content-tabs" role="tab" aria-controls="home" onclick="showtab('{{ $cats->id }}')" aria-selected="true"><strong>{{ $cats['title'] }}</strong></a></li>
                         @endif
                         @endif
                       @endforeach
@@ -645,7 +645,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                             @endif
                             <div class="view-dtl">
                                 <div class="view-heading btm-10"><a href="{{ route('user.course.show',['id' => $c->id, 'slug' => $c->slug ]) }}">{{ str_limit($c->title, $limit = 30, $end = '...') }}</a></div>
-                                <p class="btm-10"><a herf="#">{{ __('frontstaticword.by') }} @if(isset($c->user)) {{ $c->user['fname'] }} {{ $c->user['lname'] }} @endif</a></p>
+                                <p class="btm-10"><a herf="#" class="text-muted">{{ __('frontstaticword.by') }} @if(isset($c->user)) {{ $c->user['fname'] }} {{ $c->user['lname'] }} @endif</a></p>
                                 <div class="rating">
                                     <ul>
                                         <li>
@@ -1790,7 +1790,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
             @foreach($category as $t)
             @if($t->status == 1 && $t->featured == 1)
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-1">
 
                 <div class="image-container">
                 <a href="{{ route('category.page',['id' => $t->id, 'category' => $t->title]) }}">
