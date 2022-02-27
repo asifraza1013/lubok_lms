@@ -9,7 +9,7 @@
 @endif
 
 <section id="nav-bar" class="nav-bar-main-block" style="background-color: #170202;">
-    <div class="container">
+    <div class="container-fluid">
         <!-- start navigation -->
         <div class="navigation fullscreen-search-block">
             <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="hamburger">&#9776; </span>
@@ -237,10 +237,10 @@
         
         <!-- end navigation -->
         <div class="row smallscreen-search-block">
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="row">
-                    <div class="col-lg-7 col-md-4 col-sm-12">
-                        <div class="logo">
+                    <div class="col-12">
+                        <div class="logo" style="padding-left: 130px;">
                             
 
                             @if($gsetting->logo_type == 'L')
@@ -257,7 +257,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-4 col-sm-12">
+                    <!-- <div class="col-lg-5 col-md-4 col-sm-12">
                         <div class="navigation">
                             <div id="cssmenu">
                                 <ul>
@@ -292,14 +292,13 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <!-- <li ><a  href="{{route('blog.all')}}"><i class="flaticon-grid"></i>{{ __('frontstaticword.Blog') }}</a></li> -->
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 @guest
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -334,106 +333,65 @@
 
                 @auth
                 <div class="row">
-                    <!-- <div class="col-lg-3 col-md-3 col-6">
-                        <div class="learning-business learning-business-two">
-                            @if(Auth::User()->role == "user")
-                                @if($gsetting->instructor_enable == 1)
-                                    <a href="#" class="btn btn-link" data-toggle="modal" data-target="#myModalinstructor" title="Become An Instructor">{{ __('frontstaticword.BecomeAnInstructor') }}</a>
-                                @endif
-                            @endif
-                        </div>
-                    </div> -->
-                    <div class="col-lg-6 col-md-6 col-6 mt-2">
-                        <div class="learning-business">
-                            <a  class="text-white" href="{{route('blog.all')}}"><i class="flaticon-grid mr-1" style="color: #d79618;"></i>{{ __('frontstaticword.Blog') }}</a>
-                            <!-- <a href="{{ route('mycourse.show') }}" class="btn btn-link text-white"  title="My Course">{{ __('frontstaticword.MyCourses') }}</a> -->
+                    <div class="col-lg-2 col-md-2 col-6">
+                        <div class="navigation">
+                            <div id="cssmenu">
+                                <ul>
+                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webiners</a>
+                                        <ul>
+                                            <li><a href="{{route('comingsoon.show')}}" title="paid"><i class="fa fa-money rgt-20"></i>Paid</a></li>
+                                            <li><a href="{{route('comingsoon.show')}}" title="free"><i class="fa fa-video rgt-20"></i>Free</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">
-                        <div class="nav-wishlist">
-                            <ul id="nav">
-                                <li id="notification_li">
-                                    <a href="{{ url('send') }}" id="notificationLink" title="Notification"><i class="fa fa-bell"></i></a>
-                                    <span class="red-menu-badge red-bg-success">
-                                        {{ Auth()->user()->unreadNotifications->count() }}
-                                    </span>
-                                    <div id="notificationContainer">
-                                    <div id="notificationTitle">{{ __('frontstaticword.Notifications') }}</div>
-                                    <div id="notificationsBody" class="notifications">
+                    <div class="col-lg-2 col-md-2 col-6 mt-2">
+                        <div class="learning-business">
+                            <a  class="text-white" href="{{route('blog.all')}}"><i class="flaticon-grid mr-1" style="color: #d79618;"></i>{{ __('frontstaticword.Articles') }}</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-6">
+                        <div class="navigation">
+                            <div id="cssmenu">
+                                <ul>
+                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>{{ __('frontstaticword.Categories') }}</a>
+                                        @php
+                                         $categories = App\Categories::orderBy('position','ASC')->get();
+                                        @endphp
                                         <ul>
-                                            @foreach(Auth()->user()->unreadNotifications as $notification)
-                                                <li class="unread-notification">
-                                                    <a href="{{url('notifications/'.$notification->id)}}">          
-                                                    <div class="notification-image">
-                                                        @if($notification->data['image'] !== NULL )
-                                                            <img src="{{ asset('images/course/'.$notification->data['image']) }}" alt="course" class="img-fluid" >
-                                                        @else
-                                                            <img src="{{ Avatar::create($notification->data['id'])->toBase64() }}" alt="course" class="img-fluid">
+                                            @foreach($categories as $cate)
+                                            @if($cate->status == 1 )
+                                            <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}" title="{{ $cate->title }}"><i class="fa {{ $cate->icon }} rgt-20"></i>{{ str_limit($cate->title, $limit = 25, $end = '..') }}<i class="fa fa-chevron-right float-rgt"></i></a>
+                                            <ul>   
+                                                @foreach($cate->subcategory as $sub)
+                                                @if($sub->status ==1)
+                                                <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}" title="{{ $sub->title }}"><i class="fa {{ $sub->icon }} rgt-20"></i>{{ str_limit($sub->title, $limit = 25, $end = '..') }}
+                                                    <i class="fa fa-chevron-right float-rgt"></i></a>
+                                                    <ul>
+                                                        @foreach($sub->childcategory as $child)
+                                                        @if($child->status ==1)
+                                                        <li>
+                                                            <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}" title="{{ $child->title }}"><i class="fa {{ $child->icon }} rgt-20"></i>{{ str_limit($child->title, $limit = 25, $end = '..') }}</a>
+                                                        </li>
                                                         @endif
-                                                    </div>
-                                                    <div class="notification-data">
-                                                        In {{ str_limit($notification->data['id'], $limit = 20, $end = '...') }}
-                                                        <br>
-                                                        {{ str_limit($notification->data['data'], $limit = 20, $end = '...') }}
-                                                    </div>
-                                                    </a>
+                                                        @endforeach
+                                                    </ul>
                                                 </li>
-                                            @endforeach
-
-                                            @foreach(Auth()->user()->readNotifications as $notification)
-                                                <li>
-                                                    <a href="{{ route('mycourse.show') }}">
-                                                    <div class="notification-image">
-                                                        @if($notification->data['image'] !== NULL )
-                                                            <img src="{{ asset('images/course/'.$notification->data['image']) }}" alt="course" class="img-fluid" >
-                                                        @else
-                                                           <img src="{{ Avatar::create($notification->data['id'])->toBase64() }}" alt="course" class="img-fluid">
-                                                        @endif
-                                                    </div>
-                                                    <div class="notification-data">
-                                                        In {{  str_limit($notification->data['id'], $limit = 20, $end = '...') }}
-                                                        <br>
-                                                        {{ str_limit($notification->data['data'], $limit = 20, $end = '...') }}
-                                                    </div>
-                                                    </a>
-                                                </li>
+                                                @endif
+                                               @endforeach
+                                            </ul>
+                                            </li>
+                                            @endif
                                             @endforeach
                                         </ul>
-                                    </div>
-                                    <div id="notificationFooter"><a href="{{route('deleteNotification')}}">{{ __('frontstaticword.ClearAll') }}</a></div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div> -->
-                    <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-2">
-                        <div class="nav-wishlist">
-                            <a href="{{ route('wishlist.show') }}" title="Go to Wishlist"><i class="fa fa-heart"></i></a>
-                            <span class="red-menu-badge red-bg-success">
-                                @php
-                                    $wishlist = App\Wishlist::where('user_id', Auth::User()->id)->get();
-                                    
-                                @endphp
-
-                                
-
-                                @php
-                                    $counter = 0;
-                                    foreach ($wishlist as $item) {
-                                         if($item->courses->status == '1'){
-
-                                              
-                                          $counter++;
-       
-                                         }
-                                    }
-
-                                    echo  $counter; 
-                                @endphp
-                            </span>
-                        </div>
-                    </div> -->
-                    <div class="col-lg-1 col-md-1 col-sm-2 col-2 offset-lg-1">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-2 col-2 offset-lg-2">
                         <div class="shopping-cart">
                             <a href="{{ route('cart.show') }}" title="Cart"><i class="flaticon-shopping-cart"></i></a>
                             <span class="red-menu-badge red-bg-success">
@@ -461,9 +419,8 @@
                               <div class="icon"><i class="fa fa-search"></i></div>
                             </form>
                         </div>
-                        {{-- <a href="#find"><i class="fa fa-search"></i></a> --}}
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <div class="my-container">
                           <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle  my-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

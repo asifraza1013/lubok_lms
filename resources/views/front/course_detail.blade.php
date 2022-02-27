@@ -648,8 +648,8 @@
                         </div>
 
                         <div class="col-lg-3 col-6 col-xs-6 nopadding">
-                            <button type="button" onclick="toggleAllSections()" class="btn btn-link courseToggle"><span style="color:#0384a3"><strong>{{ __('frontstaticword.Expandallsections') }}</strong></span></button>
-                            <button type="button" onclick="toggleAllSections()" class="btn btn-link courseToggle" style="display:none"><span style="color:#0384a3"><strong>{{ __('frontstaticword.Collapseallsections') }}</strong></span></button>
+                            <button type="button" onclick="toggleAllSections()" class="btn btn-link courseToggle"><span style="color:#D27D2D"><strong>{{ __('frontstaticword.Expandallsections') }}</strong></span></button>
+                            <button type="button" onclick="toggleAllSections()" class="btn btn-link courseToggle" style="display:none"><span style="color:#D27D2D"><strong>{{ __('frontstaticword.Collapseallsections') }}</strong></span></button>
                         </div>
                     </div>
                     <!-- FSMS -->
@@ -1296,13 +1296,13 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-sm-8 col-7">
-                                        <div class="course-name"><a href="{{ route('user.course.show',['id' => $item->id, 'slug' => $item->slug ]) }}">{{ str_limit($item['title'], $limit = 35, $end = '...') }}</a></div>
-                                        <div class="course-update">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($item['updated_at'])) }}</div>
+                                        <div class="course-name"><a href="{{ route('user.course.show',['id' => $item->id, 'slug' => $item->slug ]) }}" style="color: #D27D2D;">{{ str_limit($item['title'], $limit = 35, $end = '...') }}</a></div>
+                                        <div class="course-update text-dark">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($item['updated_at'])) }}</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-1 col-4">
-                                <div class="course-user">
+                                <div class="course-user text-dark ">
                                     <ul>
                                         <li><i class="fa fa-user"></i></li>
                                         <li>{{ $item->order->count() }}</li>
@@ -1313,20 +1313,20 @@
                                 @if($item->type==1)
 
                                     @if($item->discount_price == !NULL)
-                                        <div class="course-currency txt-rgt">
+                                        <div class="course-currency txt-rgt text-dark">
                                             <ul>
                                                 @if($gsetting['currency_swipe'] == 1)
                                                     <li class="rate"><i class="{{ $currency['icon'] }}"></i>{{ $item->discount_price }}</li>
                                                     <li class="rate"><s><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</s></li>
                                                 @else
-                                                    <li class="rate">{{ $item->discount_price }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                    <li class="rate"><s>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></s></li>
+                                                    <li class="rate text-dark">{{ $item->discount_price }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                    <li class="rate text-dark"><s>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></s></li>
                                                 @endif
 
                                             </ul>
                                         </div>
                                     @else
-                                        <div class="course-currency txt-rgt">
+                                        <div class="course-currency txt-rgt text-dark">
                                             <ul>
                                                 @if($gsetting['currency_swipe'] == 1)
                                                 <li><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</li>

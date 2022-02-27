@@ -562,7 +562,7 @@ else{
         <div class="row">
             
             <div class="col-lg-12">
-                <div class="learning-courses">
+                <div class="learning-courses d-none">
                     @if(isset($categories->category_id))
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                       @foreach($categories->category_id as $cate)
@@ -693,8 +693,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                                         $onlyrev = array();
 
                                         $reviewcount = App\ReviewRating::where('course_id', $c->id)->WhereNotNull('review')->get();
-
-                                        foreach($reviews as $review){
+                                        foreach($reviews as $key=>$review){
 
                                             $learn = $review->learn*5;
                                             $price = $review->price*5;
@@ -703,8 +702,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                                         }
 
                                         $count = ($count*3) * 5;
-                                         
-                                        if($count != "")
+                                        if($count != "" && $count != 0)
                                         {
                                             $rat = $sub_total/$count;
                                      

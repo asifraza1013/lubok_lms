@@ -316,16 +316,16 @@
   });
 
   $(function() {
-    var urlLike = '{{ url('country/dropdown') }}';
+    var urlLike = '{{ route("country.drop.user") }}';
     $('#country_id').change(function() {
       var up = $('#upload_id').empty();
       var cat_id = $(this).val();    
       if(cat_id){
         $.ajax({
           headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          'X-CSRF-TOKEN': "{!! csrf_token() !!}"
           },
-          type:"GET",
+          type:"POST",
           url: urlLike,
           data: {catId: cat_id},
           success:function(data){   
@@ -351,9 +351,9 @@
       if(cat_id){
         $.ajax({
           headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-TOKEN': "{!! csrf_token() !!}"
           },
-          type:"GET",
+          type:"POST",
           url: urlLike,
           data: {catId: cat_id},
           success:function(data){   

@@ -173,8 +173,8 @@
                   <textarea name="short_detail" rows="3" class="form-control" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.ShortDetail') }}" required >{{ (old('short_detail')) }}</textarea>
                 </div>
                 <div class="col-md-6">
-                  <label for="exampleInputTit1e">{{ __('adminstaticword.Requirements') }}: <sup class="redstar">*</sup></label>
-                  <textarea name="requirement" rows="3"  class="form-control" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Requirements') }}" required >{{ (old('requirement')) }}</textarea>
+                  <label for="exampleInputTit1e">{{ __('adminstaticword.Requirements') }}:</label>
+                  <textarea name="requirement" rows="3"  class="form-control" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Requirements') }}" >{{ (old('requirement')) }}</textarea>
                 </div>
               </div>           
               <br> 

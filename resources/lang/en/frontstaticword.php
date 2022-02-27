@@ -377,7 +377,8 @@ return [
     'Paid' => 'Paid',
     'PreviousPapers' => 'Previous Papers',
     'AllPapers' => 'All Papers',
-    'QuickLink' => 'Quick Link'
+    'QuickLink' => 'Quick Link',
+    'Articles' => 'Articles',
     
 
 ];

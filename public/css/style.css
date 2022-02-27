@@ -8,7 +8,7 @@
   Version: 3.4
 */
 :root {
-  --dark-brow: darkgray
+  --dark-brow: black
 }
 /*=======================================================================
               [Table of Contents]
@@ -327,7 +327,7 @@ ul {
   unicode-bidi: bidi-override;
   display: inline-block;
   font-size: 12px;
-  color: #F4C150;
+  color: black;
   margin-bottom: 5px;
 }
 .rating input {
@@ -2722,7 +2722,8 @@ sup.redstar {
 }
 .course-bought-block .rating ul li {
   display: inline-block;
-  color: var(--text-dark-grey-color);
+  /* color: var(--text-dark-grey-color); */
+  color: black;
   margin-bottom: 0;
 }
 .course-bought-block .rating ul li i {
@@ -2738,7 +2739,8 @@ sup.redstar {
 }
 .categories-popularity-dtl  p {
   font-size: 13px;
-  color: var(--text-dark-grey-color);
+  /* color: var(--text-dark-grey-color); */
+  color: balck;
 }
 .rate-r {
   font-weight: 700;
@@ -6048,7 +6050,8 @@ ul {
   margin-top: 6px;
 }
 .rate s {
-  color: var(--text-dark-grey-color);
+  /* color: var(--text-dark-grey-color); */
+  color: black;
   font-size: 14px;
 }
 
@@ -8313,7 +8316,7 @@ button.omise-checkout-button {
   content: "\f106";
   font-family: fontawesome;
   right: 15px;
-  color: var(--text-blue-color);
+  color: #D27D2D;
   text-align: center;
   font-size: 20px;
   line-height: 16px;

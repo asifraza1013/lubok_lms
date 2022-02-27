@@ -48,7 +48,7 @@
                     <div class="col-md-7">
                         <div class="categories-popularity-dtl">
                             <ul>
-                                <li>{{ __('frontstaticword.FeaturedCourses') }}</li>
+                                <li class="text-white">{{ __('frontstaticword.FeaturedCourses') }}</li>
                                 <li class="heart float-rgt">
                                     @if (Auth::check())
                                         @php
@@ -87,12 +87,12 @@
                                 </li>
                             </ul>
                             <div class="view-heading btm-10"><a href="{{ route('user.course.show',['id' => $course->id, 'slug' => $course->slug ]) }}">{{ str_limit($course->title, $limit=50)}}</a></div>
-                            <div class="last-updated btm-10">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($course->updated_at)) }}</div>
+                            <div class="last-updated btm-10 text-white">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($course->updated_at)) }}</div>
                             <ul>
                                 @if($course['level_tags'] == !NULL)
                                 <li class="best-seller best-seller-one rgt-5">{{ $course['level_tags'] }}</li>
                                 @endif
-                                <li class="rgt-5">
+                                <li class="rgt-5 text-white">
                                     @php
                                         $data = App\CourseClass::where('course_id', $course->id)->get();
                                         if(count($data)>0){
@@ -106,10 +106,10 @@
                                     @endphp 
                                     {{ __('frontstaticword.Classes') }}
                                 </li>
-                                <li class="rgt-5">{{ __('frontstaticword.AllLevels') }}</li>
-                                <li class="rgt-5">
+                                <li class="rgt-5 text-white">{{ __('frontstaticword.AllLevels') }}</li>
+                                <li class="rgt-5 text-white">
                                     <ul class="rating">
-                                        <li>
+                                        <li class="text-white">
                                             <?php 
                                             $learn = 0;
                                             $price = 0;
@@ -135,11 +135,11 @@
                                             ?>
                             
                                             <div class="pull-left">
-                                                <div class="star-ratings-sprite"><span style="width:<?php echo $ratings_var; ?>%" class="star-ratings-sprite-rating"></span>
+                                                <div class="star-ratings-sprite text-white"><span style="width:<?php echo $ratings_var; ?>%" class="star-ratings-sprite-rating"></span>
                                                 </div>
                                             </div>
                                             @else
-                                                <div class="pull-left"><p>{{ __('frontstaticword.NoRating') }}</p></div>
+                                                <div class="pull-left text-white"><p>{{ __('frontstaticword.NoRating') }}</p></div>
                                             @endif
                                         </li>
                                     </ul>
@@ -180,12 +180,12 @@
                                     $reviewsrating = App\ReviewRating::where('course_id', $course->id)->first();
                                 @endphp
                                 @if(!$reviews->isEmpty())
-                                <li class="rgt-5">
+                                <li class="rgt-5 text-white">
                                     <b>{{ round($overallrating, 1) }}</b>
                                 </li>
                                 @endif
 
-                                <li>
+                                <li class="text-white">
                                     (@php
                                         $data = App\ReviewRating::where('course_id', $course->id)->get();
                                         if(count($data)>0){
@@ -199,7 +199,7 @@
                                     @endphp {{ __('frontstaticword.rating') }})
                                 </li> 
                             </ul>
-                            <p class="btm-20">{{ str_limit($course->short_detail, $limit = 70, $end='...') }}</p>
+                            <p class="btm-20 text-white">{{ str_limit($course->short_detail, $limit = 70, $end='...') }}</p>
                             <div class="business-home-slider-btn btm-20">
                                 <a href="{{ route('user.course.show',['id' => $course->id, 'slug' => $course->slug ]) }}" type="button" class="btn btn-info">{{ __('frontstaticword.Explorecourse') }}</a>
                             </div>
@@ -217,7 +217,7 @@
 @if(isset($subcat))
 <section id="categories" class="categories-main-block categories-main-block-one">
     <div class="container">
-        <h4 class="categories-heading">{{ __('frontstaticword.SubCategories') }}</h4>
+        <h4 class="categories-heading text-dark">{{ __('frontstaticword.SubCategories') }}</h4>
         <div class="row">
 
             @foreach($subcat as $cat)
@@ -242,7 +242,7 @@
 @elseif(isset($childcat))
 <section id="categories" class="categories-main-block categories-main-block-one">
     <div class="container">
-        <h4 class="categories-heading">{{ __('frontstaticword.SubCategories') }}</h4>
+        <h4 class="categories-heading text-dark">{{ __('frontstaticword.SubCategories') }}</h4>
         <div class="row">
 
             @foreach($childcat as $cat)
@@ -452,7 +452,7 @@
                     $course_count = App\Course::count();
                 @endphp
 
-                <div class="text-right">
+                <div class="text-right text-dark">
                     Showing result {{ $filter_count }} of {{ $course_count }}
                 </div>
 
@@ -485,8 +485,8 @@
                                   <div class="panel panel-default">
                                     <div class="panel-heading active" role="tab" id="headingOnexxx">
                                         <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOnexxx{{ $cate->id }}" aria-expanded="true" aria-controls="collapseOnexxx">
-                                            <i class="fa {{ $cate->icon }} rgt-10"></i> <label class="prime-cat" data-url="{{ route('category.page',['id' => $cate->id, 'category' => str_slug(str_replace('-','&',$cate->title))]) }}">{{ str_limit($cate->title, $limit = 20, $end = '..') }}</label> 
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOnexxx{{ $cate->id }}" aria-expanded="true" aria-controls="collapseOnexxx" style="color: #D27D2D;">
+                                            <i class="fa {{ $cate->icon }} rgt-10" style="color: #D27D2D;"></i> <label class="prime-cat" data-url="{{ route('category.page',['id' => $cate->id, 'category' => str_slug(str_replace('-','&',$cate->title))]) }}">{{ str_limit($cate->title, $limit = 20, $end = '..') }}</label> 
                                         </a>
                                         </h4>
                                     </div>
@@ -623,9 +623,9 @@
                                     <div class="view-heading btm-10"><a href="{{ route('user.course.show',['id' => $course->id, 'slug' => $course->slug ]) }}">{{ $course->title }}</a></div>
                                     <ul>
                                         @if($course['level_tags'] == !NULL)
-                                            <li class="best-seller best-seller-one">{{ $course['level_tags'] }}</li>
+                                            <li class="best-seller best-seller-one text-dark">{{ $course['level_tags'] }}</li>
                                         @endif
-                                        <li>
+                                        <li class="text-dark">
                                             @php
                                                 $data = App\CourseClass::where('course_id', $course->id)->get();
                                                 if(count($data)>0){
@@ -638,7 +638,7 @@
                                                 }
                                             @endphp {{ __('frontstaticword.Courses') }}
                                         </li>
-                                        <li>
+                                        <li class="text-dark">
                                              @php
                                                 $enroll = App\Order::where('course_id', $course->id)->get();
                                                 if(count($enroll)>0){
@@ -651,9 +651,9 @@
                                                 }
                                             @endphp {{ __('frontstaticword.Students') }}
                                         </li>
-                                        <li>{{ __('frontstaticword.AllLevels') }}</li>
+                                        <li class="text-dark">{{ __('frontstaticword.AllLevels') }}</li>
                                     </ul>
-                                    <p>{{  str_limit($course->short_detail, $limit = 125, $end = '..') }}</p>
+                                    <p class="text-dark">{{  str_limit($course->short_detail, $limit = 125, $end = '..') }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -675,12 +675,12 @@
                                                 @endif
                                             @endif
                                         @else
-                                            <li class="rate-r">{{ __('frontstaticword.Free') }}</li>
+                                            <li class="rate-r text-dark">{{ __('frontstaticword.Free') }}</li>
                                         @endif
                                     </ul>
                                     <div class="rating">
                                         <ul>
-                                          <li>
+                                          <li class="text-dark">
                                             <!-- star rating -->
                                             <?php 
                                             $learn = 0;
@@ -713,7 +713,7 @@
                                        
                                              
                                             @else
-                                                <div class="pull-left"><p>{{ __('frontstaticword.NoRating') }}</p></div>
+                                                <div class="pull-left text-dark"><p>{{ __('frontstaticword.NoRating') }}</p></div>
                                             @endif
                                           </li>
                                             
@@ -761,7 +761,7 @@
                                         </ul>
                                     </div>
                                     <ul>
-                                        <li>
+                                        <li class="text-dark">
                                             (@php
                                                 $data = App\ReviewRating::where('course_id', $course->id)->get();
                                                 if(count($data)>0){

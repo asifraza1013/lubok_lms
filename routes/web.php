@@ -611,8 +611,8 @@ Route::middleware(['web'])->group(function () {
 
         Route::get('language-switch/{local}', 'LanguageSwitchController@languageSwitch')->name('languageSwitch');
 
-        Route::get("country/dropdown","CountryController@upload_info");
-        Route::get("country/gcity","CountryController@gcity");
+        Route::post("country/dropdown","CountryController@upload_info")->name('country.drop.user');
+        Route::post("country/gcity","CountryController@gcity");
 
         Route::view('terms_condition', 'terms_condition');
         Route::view('privacy_policy', 'privacy_policy');

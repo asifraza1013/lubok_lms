@@ -55,7 +55,13 @@
                             <img src="{{ asset('images/default/user.jpg')}}" class="img-responsive" alt="User Image">
                           @endif
                         </td>
-                        <td>{{ $user['fname'] }} {{ $user['lname'] }}</td>
+                        <?php
+                          $name = $user['fname'].' '.$user['lname'];
+                          if( strlen( $name ) > 50 ) {
+                            $name = substr( $name, 0, 50 ) . '...';
+                         }
+                        ?>
+                        <td>{{ $name }}</td>
                         <td>{{ $user['email'] }}</td>
                         <td>{{ $user['role'] }}</td>
                         <td>
