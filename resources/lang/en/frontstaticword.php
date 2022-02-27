@@ -378,7 +378,7 @@ return [
     'PreviousPapers' => 'Previous Papers',
     'AllPapers' => 'All Papers',
     'QuickLink' => 'Quick Link',
-    'Articles' => 'Articles',
+    'Articles' => 'ARTICLES',
     
 
 ];

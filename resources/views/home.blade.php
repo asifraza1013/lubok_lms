@@ -1784,7 +1784,6 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
     <div class="container">
         <h3 class="categories-heading btm-30">{{ __('frontstaticword.FeaturedCategories') }}</h3>
         <div class="row">
-
             @foreach($category as $t)
             @if($t->status == 1 && $t->featured == 1)
 
@@ -1794,7 +1793,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
                 <a href="{{ route('category.page',['id' => $t->id, 'category' => $t->title]) }}">
 
                   <div class="image-overlay">
-                    <i class="fa {{ $t['icon'] }}"></i>{{ $t['title'] }}
+                    <i class="fa {{ $t['icon'] }}"><p>{{ $t['title'] }}</p></i>
                   </div>
 
                   @if($t['cat_image'] == !NULL)

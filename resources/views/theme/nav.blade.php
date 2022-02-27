@@ -337,7 +337,7 @@
                         <div class="navigation">
                             <div id="cssmenu">
                                 <ul>
-                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webiners</a>
+                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webinar</a>
                                         <ul>
                                             <li><a href="{{route('comingsoon.show')}}" title="paid"><i class="fa fa-money rgt-20"></i>Paid</a></li>
                                             <li><a href="{{route('comingsoon.show')}}" title="free"><i class="fa fa-video rgt-20"></i>Free</a></li>
