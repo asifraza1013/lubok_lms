@@ -46,11 +46,20 @@
 
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
+                <label for="text">{{ __('adminstaticword.SelectSubCategory') }}:</label>
+                <select name="category" class="form-control js-example-basic-single col-md-7 col-xs-12">
+                  <option value="">Please select(Optional)</option>
+                  @foreach (config('constants.blog_category') as $item)
+                  <option value="{{$item}}">{{$item}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="col-md-4">
                 <label for="text">{{ __('adminstaticword.ButtonText') }}:<sup class="redstar">*</sup></label>
                 <input type="text" class="form-control" name="text" id="text" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.ButtonText') }}">
               </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                 
                 <label for="image">{{ __('adminstaticword.Image') }}:<sup class="redstar">*</sup></label>
                 <input type="file" name="image" id="image" required>

@@ -17,7 +17,7 @@
               {{ csrf_field() }}
                       
            
-              <div class="row">
+              <div class="row display-none">
                 <div class="col-md-6">
                   <label for="exampleInputTit1e">{{ __('adminstaticword.Heading') }}:<sup class="redstar">*</sup></label>
                   <input class="form-control" type="text" name="heading" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Heading') }}">
@@ -29,7 +29,7 @@
               </div>
               <br>
 
-              <div class="row">
+              <div class="row display-none">
                 <div class="col-md-6 display-none">
                   <label for="exampleInputTit1e">{{ __('adminstaticword.SearchText') }}:<sup class="redstar">*</sup></label>
                   <input type="title" class="form-control" name="search_text" id="exampleInputTitle" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.SearchText') }}" value="0">
@@ -65,17 +65,17 @@
                   <input type="hidden"  name="free" value="0" for="status" id="status">
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 display-none">
                   <label for="exampleInputDetails">{{ __('adminstaticword.TextPosition') }}:<sup class="redstar">*</sup></label>
                   <br>
                   <li class="tg-list-item">              
                     <input class="tgl tgl-skewed" id="left" type="checkbox" name="left" >
                     <label class="tgl-btn" data-tg-off="{{ __('adminstaticword.Left') }}" data-tg-on="{{ __('adminstaticword.Right') }}" for="left"></label>
                   </li>
-                  <input type="hidden"  name="free" value="0" for="left" id="left">
                 </div>
+                <input type="hidden"  name="free" value="0" for="left" id="left">
 
-                <div class="col-md-3">
+                <div class="col-md-3 display-none">
                   <label for="exampleInputDetails">{{ __('adminstaticword.SearchonSlider') }}:<sup class="redstar">*</sup></label>
                   <br>
                   <li class="tg-list-item">              

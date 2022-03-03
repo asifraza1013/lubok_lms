@@ -6054,6 +6054,9 @@ ul {
   color: black;
   font-size: 14px;
 }
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 15px !important;
+}
 
 
 /* ================================ */

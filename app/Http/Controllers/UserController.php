@@ -70,8 +70,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => 'required|string|max:100',
+            'lname' => 'required|string|max:100',
             'mobile' => 'required|regex:/[0-9]{9}/',
             'email' => 'required|unique:users,email',
             'password' => 'required|min:6|max:20',
@@ -284,7 +284,127 @@ class UserController extends Controller
         }
     }
 
+    public function import(Request $request)
+    {
+        $validator = Validator::make(
+            [
+                'file' => $request->file,
+                'extension' => strtolower($request->file->getClientOriginalExtension()),
+            ],
+            [
+                'file' => 'required',
+                'extension' => 'required|in:xlsx,xls,csv',
+            ]
+
+        );
 
 
+        if ($validator->fails()) {
+            return back()->withErrors('Invalid file type!');
+        }
+
+        if (!$request->has('file')) {
+           
+            return back()->withErrors('Please choose a file !');
+        }
+
+        $fileName = time() . '.' . $request->file->getClientOriginalExtension();
+
+        if (!is_dir(public_path() . '/excel')) {
+            mkdir(public_path() . '/excel');
+        }
+
+        $request->file->move(public_path('excel'), $fileName);
+        
+        $lang = Session::get('changed_language');
+
+        
+
+        $quiz_import = (new FastExcel)->import(public_path() . '/excel/' . $fileName);
+        
+
+        if (count($quiz_import) > 0) {
+
+          try
+        {
+            
+
+            foreach ($quiz_import as $key => $row_fetch) {
+                
+               
+
+                $line_number = $key + 1;
+
+                $course_title = $row_fetch['Course'];
+
+                $course_id = Course::whereRaw("JSON_EXTRACT(title, '$.$lang') = '$course_title'")->first();
+
+                $quiz_topic = $row_fetch['QuizTopic'];
+
+                $topic_id = QuizTopic::whereRaw("JSON_EXTRACT(title, '$.$lang') = '$quiz_topic'")->first();
+
+                $quiz_question = $row_fetch['Question'];
+
+                $option_A = $row_fetch['A'];
+
+                $option_B = $row_fetch['B'];
+
+                $option_C = $row_fetch['C'];
+
+                $option_D = $row_fetch['D'];
+
+
+                $correct_answer = $row_fetch['CorrectAnswer'];
+
+               
+
+                $product = Quiz::create([
+
+                    'course_id' => $course_id->id,
+                    'topic_id' => $topic_id->id,
+                    'question' => $quiz_question,
+                    'a' => $option_A,
+                    'b' => $option_B,
+                    'c' => $option_C,
+                    'd' => $option_D,
+                    'answer' => $correct_answer,
+
+                ]);
+                
+                
+
+            }
+
+            }
+        catch (\Swift_TransportException $e)
+        {
+            
+            $file = @file_get_contents(public_path() . '/excel/' . $fileName);
+
+            if ($file) {
+                unlink(public_path() . '/excel/' . $fileName);
+            }
+
+            \Session::flash('delete', $e->getMessage());
+            return back();
+        }
+
+        }
+        else {
+            
+            $file = @file_get_contents(public_path() . '/excel/' . $fileName);
+
+            if ($file) {
+                unlink(public_path() . '/excel/' . $fileName);
+            }
+             
+            return back()->with('success', trans('flash.AddedSuccessfully'));
+        }
+        
+        
+        return back()->with('success', trans('flash.AddedSuccessfully'));
     
+
+
+    }
 }

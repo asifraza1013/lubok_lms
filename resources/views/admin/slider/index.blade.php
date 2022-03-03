@@ -30,10 +30,10 @@
               <tr>
                 <th>#</th>
                 <th>{{ __('adminstaticword.Image') }}</th>
-                <th>{{ __('adminstaticword.Heading') }}</th>
-                <th>{{ __('adminstaticword.SubHeading') }}</th>
+                <!-- <th>{{ __('adminstaticword.Heading') }}</th>
+                <th>{{ __('adminstaticword.SubHeading') }}</th> -->
                 <th>{{ __('adminstaticword.Status') }}</th>
-                <th>{{ __('adminstaticword.TextPosition') }}</th>
+                <!-- <th>{{ __('adminstaticword.TextPosition') }}</th> -->
                 <th>{{ __('adminstaticword.Edit') }}</th>
                 <th>{{ __('adminstaticword.Delete') }}</th>
               </tr>
@@ -47,8 +47,8 @@
                 <td>
                   <img src="{{ asset('images/slider/'.$cat->image) }}" class="img-responsive">
                 </td>
-                <td>{{$cat->heading}}</td>
-                <td>{{$cat->sub_heading}}</td> 
+                <!-- <td>{{$cat->heading}}</td>
+                <td>{{$cat->sub_heading}}</td>  -->
                 <td>
                    <form action="{{ route('slider.quick',$cat->id) }}" method="POST">
                       {{ csrf_field() }}
@@ -61,13 +61,13 @@
                       </button>
                     </form>
                 </td>
-                <td>
+                <!-- <td>
                   @if($cat->left ==1)
                     {{ __('adminstaticword.Right') }}
                   @else
                     {{ __('adminstaticword.Left') }}
                   @endif
-                </td>
+                </td> -->
               
                 <th><a class="btn btn-primary btn-sm" href="{{url('slider/'.$cat->id)}}">
                   <i class="glyphicon glyphicon-pencil"></i></a></th>

@@ -174,9 +174,14 @@ class BlogController extends Controller
         }
     }
 
-    public function blogpage()
+    public function blogpage(Request $request)
     {
-      $blogs = Blog::orderby('id','desc')->paginate(5);
+
+      $blogs = Blog::orderby('id','desc');
+      if($request->has('cate') && $request->cate){
+          $blogs = $blogs->where('category', $request->cate);
+      }
+      $blogs = $blogs->paginate(15);
       return view('front.blog.blog',compact('blogs'));
     }
 

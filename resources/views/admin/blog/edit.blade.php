@@ -35,11 +35,20 @@
 		              	<br>
 
 		              	<div class="row">
-		                  <div class="col-md-6">
+		                  <div class="col-md-4">
 		                    <label for="heading">{{ __('adminstaticword.Heading') }}<sup class="redstar">*</sup></label>
 		                    <input value="{{ $show->heading }}" autofocus required name="heading" type="text" class="form-control" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Heading') }}"/>
 		                  </div>
-		                  <div class="col-md-6">
+		                  <div class="col-md-4">
+							<label for="text">{{ __('adminstaticword.SelectSubCategory') }}:</label>
+							<select name="category" class="form-control js-example-basic-single col-md-7 col-xs-12">
+							  <option value="">Please select(Optional)</option>
+							  @foreach (config('constants.blog_category') as $item)
+							  <option value="{{$item}}" {{($item == $show->category) ? 'selected' : null}}>{{$item}}</option>
+							  @endforeach
+							</select>
+						  </div>
+		                  <div class="col-md-4">
 		                    <label for="text">{{ __('adminstaticword.ButtonText') }}</label>
 		                    <input value="{{ $show->text }}" autofocus name="text" type="text" class="form-control" placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.ButtonText') }}"/>
 		                  </div>

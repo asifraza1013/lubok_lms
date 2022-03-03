@@ -15,7 +15,7 @@
                 </div>
                 @if(isset($widgets))
 
-                <div class="col-lg-2 col-md-6 col-4 offset-lg-2">
+                <!-- <div class="col-lg-2 col-md-6 col-4 offset-lg-2">
                     <div class="widget"><b>QUICK LINKS</b></div>
                     <div class="footer-link">
                         <ul>
@@ -24,15 +24,15 @@
                             <li><a href="{{ route('comingsoon.page') }}" title="Blog">Webinars</a></li> 
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-4">
+                </div> -->
+                <div class="col-lg-2 col-md-6 col-4 offset-4">
                     <div class="widget"><b>SUPPORT</b></div>
                     <div class="footer-link">
                         <ul>
-                            <li><a href="{{ route('careers.show') }}" title="Careers">{{ __('frontstaticword.Careers') }}</a></li>
+                            <!-- <li><a href="{{ route('careers.show') }}" title="Careers">{{ __('frontstaticword.Careers') }}</a></li> -->
                             <li><a href="{{ route('about.show') }}" title="About Us">{{ __('frontstaticword.Aboutus') }}</a></li>
                             <li><a href="{{url('user_contact')}}" title="Contact Us">{{ __('frontstaticword.Contactus') }}</a></li>
-                            <li><a href="{{url('terms_condition')}}" title="Terms">{{ __('frontstaticword.Terms&Condition') }}</a></li> 
+                            <!-- <li><a href="{{url('terms_condition')}}" title="Terms">{{ __('frontstaticword.Terms&Condition') }}</a></li>  -->
                             <li><a href="{{url('privacy_policy')}}" title="Policy">{{ __('frontstaticword.PrivacyPolicy') }}</a></li>
                         </ul>
                     </div>

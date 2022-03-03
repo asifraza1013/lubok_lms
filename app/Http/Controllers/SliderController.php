@@ -50,10 +50,10 @@ class SliderController extends Controller
     {
         
         $data = $this->validate($request,[
-            'heading' => 'required',
-            'sub_heading' => 'required',
-            'search_text' => 'required',
-            'detail' => 'required',
+            // 'heading' => 'required',
+            // 'sub_heading' => 'required',
+            // 'search_text' => 'required',
+            // 'detail' => 'required',
             'image'=>'required',
         ]);
 

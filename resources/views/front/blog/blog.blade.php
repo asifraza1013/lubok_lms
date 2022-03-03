@@ -1,5 +1,5 @@
 @extends('theme.master')
-@section('title', 'Blog')
+@section('title', 'Articles')
 @section('content')
 
 @include('admin.message')
@@ -34,8 +34,8 @@
                                          
                                             @endif
                                         </div>
-                                        <h3 class="blog-slider-heading"><a href="{{ route('blog.detail',$item->id) }}" title="heading">{{ $item->heading }}</a></h3>
-                                        <p class="btm-10">{{substr(strip_tags($item->detail), 0, 400)}}</p>
+                                        <h3 class="blog-slider-heading"><a href="{{ route('blog.detail',$item->id) }}" title="heading" style="color: #D79618;">{{ $item->heading }}</a></h3>
+                                        <p class="btm-10 text-dark">{{substr(strip_tags($item->detail), 0, 400)}}</p>
                                         <div class="business-home-slider-btn btm-20">
                                             <button onclick="window.location.href='{{ route('blog.detail',$item->id) }}';"  type="button" class="btn btn-link">{{ $item->text }}</button>
                                         </div>
@@ -62,8 +62,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="block-block-dtl">
-                                    <h3 class="blog-slider-heading"><a href="{{ route('blog.detail',$blog->id) }}" title="heading">{{ $blog->heading }}</a></h3>
-                                    <p>{{substr(strip_tags($blog->detail), 0, 400)}}</p>
+                                    <h3 class="blog-slider-heading"><a href="{{ route('blog.detail',$blog->id) }}" title="heading" style="color: #D79618;">{{ $blog->heading }}</a></h3>
+                                    <p class="text-dark">{{substr(strip_tags($blog->detail), 0, 400)}}</p>
                                 </div>
                             </div>
                            

@@ -29,7 +29,7 @@ class Blog extends Model
 
 	  protected $table = 'blogs';
 
-    protected $fillable = ['user_id', 'date', 'image', 'heading', 'detail', 'text', 'approved', 'status'];
+    protected $fillable = ['user_id', 'date', 'image', 'heading', 'detail', 'text', 'approved', 'status', 'category'];
      
     public function user()
     {

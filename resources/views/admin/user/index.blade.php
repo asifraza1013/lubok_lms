@@ -25,7 +25,7 @@
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-              <table id="example1" class="table table-bordered table-striped table-responsive display nowrap">
+              <table id="example1" class="table table-bordered table-striped table-responsive-md table-responsive display">
                 <thead>
                   <th>#</th>
                   <th>{{ __('adminstaticword.Image') }}</th>
@@ -57,9 +57,7 @@
                         </td>
                         <?php
                           $name = $user['fname'].' '.$user['lname'];
-                          if( strlen( $name ) > 50 ) {
-                            $name = substr( $name, 0, 50 ) . '...';
-                         }
+                          
                         ?>
                         <td>{{ $name }}</td>
                         <td>{{ $user['email'] }}</td>

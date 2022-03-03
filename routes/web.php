@@ -332,8 +332,8 @@ Route::middleware(['web'])->group(function () {
             Route::post('/admin/push-notifications','OneSignalNotificationController@push')->name('admin.push.notif');
 
 
-            Route::get('/admin/import/quiz', 'QuizController@importquiz')->name('import.quiz');
-            Route::post('admin/import', 'QuizController@import')->name('import');
+            Route::get('/import/quiz', 'QuizController@importquiz')->name('import.quiz');
+            Route::post('import', 'QuizController@import')->name('import');
 
 
             Route::get('quick/update', 'ReplaceFilesController@index')->name('quick.update');
@@ -545,7 +545,7 @@ Route::middleware(['web'])->group(function () {
         Route::post('rating/show/{id}','ReviewratingController@rating')->name('course.rating');
         Route::post('reports/insert/{id}','ReportReviewController@store')->name('report.review');
         Route::get('/course/{id}/{slug}','CourseController@CourseDetailPage')->name('user.course.show');
-        Route::get('all/blog','BlogController@blogpage')->name('blog.all');
+        Route::get('all/article','BlogController@blogpage')->name('blog.all');
         Route::get('about/show','AboutController@aboutpage')->name('about.show');
         
         Route::get('show/careers','CareersController@careerpage')->name('careers.show');
