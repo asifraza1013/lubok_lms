@@ -270,7 +270,7 @@
 
         <!-- end navigation -->
         <div class="row smallscreen-search-block">
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="row">
                     <div class="col-12">
                         <div class="logo" style="padding-left: 130px;">
@@ -291,140 +291,107 @@
                             @endif
                         </div>
                     </div>
-                    <!-- <div class="col-lg-5 col-md-4 col-sm-12">
-                        <div class="navigation">
-                            <div id="cssmenu">
-                                <ul>
-                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>{{ __('frontstaticword.Categories') }}</a>
-                                        @php
-                                         $categories = App\Categories::orderBy('position','ASC')->get();
-                                        @endphp
-                                        <ul>
-                                            @foreach($categories as $cate)
-                                            @if($cate->status == 1 )
-                                            <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}" title="{{ $cate->title }}"><i class="fa {{ $cate->icon }} rgt-20"></i>{{ str_limit($cate->title, $limit = 25, $end = '..') }}<i class="fa fa-chevron-right float-rgt"></i></a>
-                                            <ul>   
-                                                @foreach($cate->subcategory as $sub)
-                                                @if($sub->status ==1)
-                                                <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}" title="{{ $sub->title }}"><i class="fa {{ $sub->icon }} rgt-20"></i>{{ str_limit($sub->title, $limit = 25, $end = '..') }}
-                                                    <i class="fa fa-chevron-right float-rgt"></i></a>
-                                                    <ul>
-                                                        @foreach($sub->childcategory as $child)
-                                                        @if($child->status ==1)
-                                                        <li>
-                                                            <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}" title="{{ $child->title }}"><i class="fa {{ $child->icon }} rgt-20"></i>{{ str_limit($child->title, $limit = 25, $end = '..') }}</a>
-                                                        </li>
-                                                        @endif
-                                                        @endforeach
-                                                    </ul>
-                                                </li>
-                                                @endif
-                                               @endforeach
-                                            </ul>
-                                            </li>
-                                            @endif
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 @guest
                 <div class="row">
-                    <div class="col-lg-2 col-md-2 col-6">
-                        <div class="navigation">
-                            <div id="cssmenu">
-                                <ul>
-                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Activities</a>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-6 p-0">
+                                <div class="navigation">
+                                    <div id="cssmenu">
                                         <ul>
-                                            <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i>Excursion</a></li>
-                                            <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i>Annual Grand Meeting</a></li>
-                                            <li><a href="{{route('comingsoon.show')}}" title="free"><i
-                                                        class="fa fa-video rgt-20"></i>Welfare</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-6">
-                        <div class="navigation">
-                            <div id="cssmenu">
-                                <ul>
-                                    <li><a href="{{route('blog.all')}}" title="Categories"><i class="flaticon-grid"></i>Articles</a>
-                                        <ul>
-                                            <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i> Financial Management</a>
-                                            </li>
-                                            <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i> Investment</a></li>
-                                            <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i> Motivation</a></li>
-                                            <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i> Property</a></li>
-                                            <li><a href="{{route('blog.all')}}" title="free"><i
-                                                        class="fa fa-video rgt-20"></i>Protection</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-6">
-                        <div class="navigation">
-                            <div id="cssmenu">
-                                <ul>
-                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webinar</a>
-                                        <ul>
-                                            <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                        class="fa fa-money rgt-20"></i>Paid</a></li>
-                                            <li><a href="{{route('comingsoon.show')}}" title="free"><i
-                                                        class="fa fa-video rgt-20"></i>Free</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-6">
-                        <div class="navigation">
-                            <div id="cssmenu">
-                                <ul>
-                                    <li><a href="#" title="Categories"><i class="flaticon-grid"></i>COURSES</a>
-                                        @php
-                                        $categories = App\Categories::orderBy('position','ASC')->get();
-                                        @endphp
-                                        <ul>
-                                            @foreach($categories as $cate)
-                                            @if($cate->status == 1 )
-                                            <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}"
-                                                    title="{{ $cate->title }}"><i
-                                                        class="fa {{ $cate->icon }} rgt-20"></i>{{
-                                                    str_limit($cate->title, $limit = 25, $end = '..') }}<i
-                                                        class="fa fa-chevron-right float-rgt"></i></a>
+                                            <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Activities</a>
                                                 <ul>
-                                                    @foreach($cate->subcategory as $sub)
-                                                    @if($sub->status ==1)
-                                                    <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}"
-                                                            title="{{ $sub->title }}"><i
-                                                                class="fa {{ $sub->icon }} rgt-20"></i>{{
-                                                            str_limit($sub->title, $limit = 25, $end = '..') }}
-                                                            <i class="fa fa-chevron-right float-rgt"></i></a>
+                                                    <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i>Excursion</a></li>
+                                                    <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i>Annual Grand Meeting</a></li>
+                                                    <li><a href="{{route('comingsoon.show')}}" title="free"><i
+                                                                class="fa fa-video rgt-20"></i>Welfare</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-6">
+                                <div class="navigation">
+                                    <div id="cssmenu">
+                                        <ul>
+                                            <li><a href="{{route('blog.all')}}" title="Categories"><i class="flaticon-grid"></i>Articles</a>
+                                                <ul>
+                                                    <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i> Financial Management</a>
+                                                    </li>
+                                                    <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i> Investment</a></li>
+                                                    <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i> Motivation</a></li>
+                                                    <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i> Property</a></li>
+                                                    <li><a href="{{route('blog.all')}}" title="free"><i
+                                                                class="fa fa-video rgt-20"></i>Protection</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-6">
+                                <div class="navigation">
+                                    <div id="cssmenu">
+                                        <ul>
+                                            <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webinar</a>
+                                                <ul>
+                                                    <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                class="fa fa-money rgt-20"></i>Paid</a></li>
+                                                    <li><a href="{{route('comingsoon.show')}}" title="free"><i
+                                                                class="fa fa-video rgt-20"></i>Free</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-6">
+                                <div class="navigation">
+                                    <div id="cssmenu">
+                                        <ul>
+                                            <li><a href="#" title="Categories"><i class="flaticon-grid"></i>COURSES</a>
+                                                @php
+                                                $categories = App\Categories::orderBy('position','ASC')->get();
+                                                @endphp
+                                                <ul>
+                                                    @foreach($categories as $cate)
+                                                    @if($cate->status == 1 )
+                                                    <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}"
+                                                            title="{{ $cate->title }}"><i
+                                                                class="fa {{ $cate->icon }} rgt-20"></i>{{
+                                                            str_limit($cate->title, $limit = 25, $end = '..') }}<i
+                                                                class="fa fa-chevron-right float-rgt"></i></a>
                                                         <ul>
-                                                            @foreach($sub->childcategory as $child)
-                                                            @if($child->status ==1)
-                                                            <li>
-                                                                <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}"
-                                                                    title="{{ $child->title }}"><i
-                                                                        class="fa {{ $child->icon }} rgt-20"></i>{{
-                                                                    str_limit($child->title, $limit = 25, $end =
-                                                                    '..') }}</a>
+                                                            @foreach($cate->subcategory as $sub)
+                                                            @if($sub->status ==1)
+                                                            <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}"
+                                                                    title="{{ $sub->title }}"><i
+                                                                        class="fa {{ $sub->icon }} rgt-20"></i>{{
+                                                                    str_limit($sub->title, $limit = 25, $end = '..') }}
+                                                                    <i class="fa fa-chevron-right float-rgt"></i></a>
+                                                                <ul>
+                                                                    @foreach($sub->childcategory as $child)
+                                                                    @if($child->status ==1)
+                                                                    <li>
+                                                                        <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}"
+                                                                            title="{{ $child->title }}"><i
+                                                                                class="fa {{ $child->icon }} rgt-20"></i>{{
+                                                                            str_limit($child->title, $limit = 25, $end =
+                                                                            '..') }}</a>
+                                                                    </li>
+                                                                    @endif
+                                                                    @endforeach
+                                                                </ul>
                                                             </li>
                                                             @endif
                                                             @endforeach
@@ -434,136 +401,144 @@
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            @endif
-                                            @endforeach
                                         </ul>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-1">
-                        <div class="search" id="search">
-                            <form method="GET" id="searchform" action="{{ route('search') }}">
-                                <div class="search-input-wrap">
-                                    <input class="search-input" name="searchTerm" placeholder="Search in Site"
-                                        type="text" id="s" />
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-2 offset-lg-2">
+                                <div class="search" id="search">
+                                    <form method="GET" id="searchform" action="{{ route('search') }}">
+                                        <div class="search-input-wrap">
+                                            <input class="search-input" name="searchTerm" placeholder="Search in Site"
+                                                type="text" id="s" />
+                                        </div>
+                                        <input class="search-submit" type="submit" id="go" value="">
+                                        <div class="icon"><i class="fa fa-search"></i></div>
+                                    </form>
                                 </div>
-                                <input class="search-submit" type="submit" id="go" value="">
-                                <div class="icon"><i class="fa fa-search"></i></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="Login-btn">
-
-
-                            {{-- <a href="#find" class="nav-search nav-wishlist"><i class="fa fa-search"></i></a> --}}
-                            <a href="{{ route('login') }}" class="btn btn-secondary" title="login">{{
-                                __('frontstaticword.Login') }}</a>
-                            <a href="{{ route('register') }}" class="btn btn-primary" title="register">{{
-                                __('frontstaticword.Signup') }}</a>
-
+                            </div>
+                            <div class="col-8">
+                                <div class="Login-btn">
+        
+        
+                                    {{-- <a href="#find" class="nav-search nav-wishlist"><i class="fa fa-search"></i></a> --}}
+                                    <a href="{{ route('login') }}" class="btn btn-secondary" title="login">{{
+                                        __('frontstaticword.Login') }}</a>
+                                    <a href="{{ route('register') }}" class="btn btn-primary" title="register">{{
+                                        __('frontstaticword.Signup') }}</a>
+        
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @endguest
 
                     @auth
                     <div class="row">
-                        <div class="col-lg-2 col-md-2 col-6">
-                            <div class="navigation">
-                                <div id="cssmenu">
-                                    <ul>
-                                        <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Activities</a>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-6">
+                                    <div class="navigation">
+                                        <div id="cssmenu">
                                             <ul>
-                                                <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i>Excursion</a></li>
-                                                <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i>Annual Grand Meeting</a></li>
-                                                <li><a href="{{route('comingsoon.show')}}" title="free"><i
-                                                            class="fa fa-video rgt-20"></i>Welfare</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-6">
-                            <div class="navigation">
-                                <div id="cssmenu">
-                                    <ul>
-                                        <li><a href="{{route('blog.all')}}" title="Categories"><i class="flaticon-grid"></i>Articles</a>
-                                            <ul>
-                                                @foreach (config('constants.blog_category') as $item)
-                                                <li><a href="{{route('blog.all', ['cate' => $item])}}" title="paid"><i
-                                                    class="fa fa-money rgt-20"></i> {{$item}}</a>
-                                                @endforeach
-                                                <!-- <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i> Financial Management</a>
-                                                </li>
-                                                <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i> Investment</a></li>
-                                                <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i> Motivation</a></li>
-                                                <li><a href="{{route('blog.all')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i> Property</a></li>
-                                                <li><a href="{{route('blog.all')}}" title="free"><i
-                                                            class="fa fa-video rgt-20"></i>Protection</a></li> -->
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-6">
-                            <div class="navigation">
-                                <div id="cssmenu">
-                                    <ul>
-                                        <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webinar</a>
-                                            <ul>
-                                                <li><a href="{{route('comingsoon.show')}}" title="paid"><i
-                                                            class="fa fa-money rgt-20"></i>Paid</a></li>
-                                                <li><a href="{{route('comingsoon.show')}}" title="free"><i
-                                                            class="fa fa-video rgt-20"></i>Free</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-6">
-                            <div class="navigation">
-                                <div id="cssmenu">
-                                    <ul>
-                                        <li><a href="#" title="Categories"><i class="flaticon-grid"></i>COURSES</a>
-                                            @php
-                                            $categories = App\Categories::orderBy('position','ASC')->get();
-                                            @endphp
-                                            <ul>
-                                                @foreach($categories as $cate)
-                                                @if($cate->status == 1 )
-                                                <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}"
-                                                        title="{{ $cate->title }}"><i
-                                                            class="fa {{ $cate->icon }} rgt-20"></i>{{
-                                                        str_limit($cate->title, $limit = 25, $end = '..') }}<i
-                                                            class="fa fa-chevron-right float-rgt"></i></a>
+                                                <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Activities</a>
                                                     <ul>
-                                                        @foreach($cate->subcategory as $sub)
-                                                        @if($sub->status ==1)
-                                                        <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}"
-                                                                title="{{ $sub->title }}"><i
-                                                                    class="fa {{ $sub->icon }} rgt-20"></i>{{
-                                                                str_limit($sub->title, $limit = 25, $end = '..') }}
-                                                                <i class="fa fa-chevron-right float-rgt"></i></a>
+                                                        <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i>Excursion</a></li>
+                                                        <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i>Annual Grand Meeting</a></li>
+                                                        <li><a href="{{route('comingsoon.show')}}" title="free"><i
+                                                                    class="fa fa-video rgt-20"></i>Welfare</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-6">
+                                    <div class="navigation">
+                                        <div id="cssmenu">
+                                            <ul>
+                                                <li><a href="{{route('blog.all')}}" title="Categories"><i class="flaticon-grid"></i>Articles</a>
+                                                    <ul>
+                                                        @foreach (config('constants.blog_category') as $item)
+                                                        <li><a href="{{route('blog.all', ['cate' => $item])}}" title="paid"><i
+                                                            class="fa fa-money rgt-20"></i> {{$item}}</a>
+                                                        @endforeach
+                                                        <!-- <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i> Financial Management</a>
+                                                        </li>
+                                                        <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i> Investment</a></li>
+                                                        <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i> Motivation</a></li>
+                                                        <li><a href="{{route('blog.all')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i> Property</a></li>
+                                                        <li><a href="{{route('blog.all')}}" title="free"><i
+                                                                    class="fa fa-video rgt-20"></i>Protection</a></li> -->
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-6">
+                                    <div class="navigation">
+                                        <div id="cssmenu">
+                                            <ul>
+                                                <li><a href="#" title="Categories"><i class="flaticon-grid"></i>Webinar</a>
+                                                    <ul>
+                                                        <li><a href="{{route('comingsoon.show')}}" title="paid"><i
+                                                                    class="fa fa-money rgt-20"></i>Paid</a></li>
+                                                        <li><a href="{{route('comingsoon.show')}}" title="free"><i
+                                                                    class="fa fa-video rgt-20"></i>Free</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-6">
+                                    <div class="navigation">
+                                        <div id="cssmenu">
+                                            <ul>
+                                                <li><a href="#" title="Categories"><i class="flaticon-grid"></i>COURSES</a>
+                                                    @php
+                                                    $categories = App\Categories::orderBy('position','ASC')->get();
+                                                    @endphp
+                                                    <ul>
+                                                        @foreach($categories as $cate)
+                                                        @if($cate->status == 1 )
+                                                        <li><a href="{{ route('category.page',['id' => $cate->id, 'category' => $cate->title]) }}"
+                                                                title="{{ $cate->title }}"><i
+                                                                    class="fa {{ $cate->icon }} rgt-20"></i>{{
+                                                                str_limit($cate->title, $limit = 25, $end = '..') }}<i
+                                                                    class="fa fa-chevron-right float-rgt"></i></a>
                                                             <ul>
-                                                                @foreach($sub->childcategory as $child)
-                                                                @if($child->status ==1)
-                                                                <li>
-                                                                    <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}"
-                                                                        title="{{ $child->title }}"><i
-                                                                            class="fa {{ $child->icon }} rgt-20"></i>{{
-                                                                        str_limit($child->title, $limit = 25, $end =
-                                                                        '..') }}</a>
+                                                                @foreach($cate->subcategory as $sub)
+                                                                @if($sub->status ==1)
+                                                                <li><a href="{{ route('subcategory.page',['id' => $sub->id, 'category' => $sub->title]) }}"
+                                                                        title="{{ $sub->title }}"><i
+                                                                            class="fa {{ $sub->icon }} rgt-20"></i>{{
+                                                                        str_limit($sub->title, $limit = 25, $end = '..') }}
+                                                                        <i class="fa fa-chevron-right float-rgt"></i></a>
+                                                                    <ul>
+                                                                        @foreach($sub->childcategory as $child)
+                                                                        @if($child->status ==1)
+                                                                        <li>
+                                                                            <a href="{{ route('childcategory.page',['id' => $child->id, 'category' => $child->title]) }}"
+                                                                                title="{{ $child->title }}"><i
+                                                                                    class="fa {{ $child->icon }} rgt-20"></i>{{
+                                                                                str_limit($child->title, $limit = 25, $end =
+                                                                                '..') }}</a>
+                                                                        </li>
+                                                                        @endif
+                                                                        @endforeach
+                                                                    </ul>
                                                                 </li>
                                                                 @endif
                                                                 @endforeach
@@ -573,156 +548,158 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                @endif
-                                                @endforeach
                                             </ul>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-sm-2 col-2 mt-2">
-                            <div class="shopping-cart">
-                                <a href="{{ route('cart.show') }}" title="Cart"><i
-                                        class="flaticon-shopping-cart"></i></a>
-                                <span class="red-menu-badge red-bg-success">
-                                    @php
-                                    $item = App\Cart::where('user_id', Auth::User()->id)->get();
-                                    if(count($item)>0){
-
-                                    echo count($item);
-                                    }
-                                    else{
-
-                                    echo "0";
-                                    }
-                                    @endphp
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-2 col-2">
-                            <div class="search search-one" id="search">
-                                <form method="GET" id="searchform" action="{{ route('search') }}">
-                                    <div class="search-input-wrap">
-                                        <input class="search-input" name="searchTerm" placeholder="Search in Site"
-                                            type="text" id="s" />
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-3 mt-2 offset-2">
+                                    <div class="shopping-cart">
+                                        <a href="{{ route('cart.show') }}" title="Cart"><i
+                                                class="flaticon-shopping-cart"></i></a>
+                                        <span class="red-menu-badge red-bg-success">
+                                            @php
+                                            $item = App\Cart::where('user_id', Auth::User()->id)->get();
+                                            if(count($item)>0){
+        
+                                            echo count($item);
+                                            }
+                                            else{
+        
+                                            echo "0";
+                                            }
+                                            @endphp
+                                        </span>
                                     </div>
-                                    <input class="search-submit" type="submit" id="go" value="">
-                                    <div class="icon"><i class="fa fa-search"></i></div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                            <div class="my-container">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle  my-dropdown" type="button"
-                                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="true">
-                                        @if(Auth::User()['user_img'] != null && Auth::User()['user_img'] !='' &&
-                                        @file_get_contents('images/user_img/'.Auth::user()['user_img']))
-                                        <img src="{{ url('/images/user_img/'.Auth::User()->user_img) }}" class="circle"
-                                            alt="">
-                                        @else
-                                        <img src="{{ asset('images/default/user.jpg')}}" class="circle" alt="">
-                                        @endif
-                                        <span class="dropdown__item name" id="name">{{ str_limit(Auth::User()->fname,
-                                            $limit = 10, $end = '..') }}</span>
-                                        <span class="dropdown__item caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-right User-Dropdown U-open"
-                                        aria-labelledby="dropdownMenu1">
-                                        <div id="notificationTitle">
-                                            @if(Auth::User()['user_img'] != null && Auth::User()['user_img'] !='' &&
-                                            @file_get_contents('images/user_img/'.Auth::user()['user_img']))
-                                            <img src="{{ url('/images/user_img/'.Auth::User()->user_img) }}"
-                                                class="dropdown-user-circle" alt="">
-                                            @else
-                                            <img src="{{ asset('images/default/user.jpg')}}"
-                                                class="dropdown-user-circle" alt="">
-                                            @endif
-                                            <div class="user-detailss">
-                                                {{ Auth::User()->fname }}
-                                                <br>
-                                                {{ Auth::User()->email }}
+                                </div>
+                                <div class="col-3">
+                                    <div class="search search-one" id="search">
+                                        <form method="GET" id="searchform" action="{{ route('search') }}">
+                                            <div class="search-input-wrap">
+                                                <input class="search-input" name="searchTerm" placeholder="Search in Site"
+                                                    type="text" id="s" />
                                             </div>
-
+                                            <input class="search-submit" type="submit" id="go" value="">
+                                            <div class="icon"><i class="fa fa-search"></i></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="my-container">
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle  my-dropdown" type="button"
+                                                id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="true">
+                                                @if(Auth::User()['user_img'] != null && Auth::User()['user_img'] !='' &&
+                                                @file_get_contents('images/user_img/'.Auth::user()['user_img']))
+                                                <img src="{{ url('/images/user_img/'.Auth::User()->user_img) }}" class="circle"
+                                                    alt="">
+                                                @else
+                                                <img src="{{ asset('images/default/user.jpg')}}" class="circle" alt="">
+                                                @endif
+                                                <span class="dropdown__item name" id="name">{{ str_limit(Auth::User()->fname,
+                                                    $limit = 10, $end = '..') }}</span>
+                                                <span class="dropdown__item caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right User-Dropdown U-open"
+                                                aria-labelledby="dropdownMenu1">
+                                                <div id="notificationTitle">
+                                                    @if(Auth::User()['user_img'] != null && Auth::User()['user_img'] !='' &&
+                                                    @file_get_contents('images/user_img/'.Auth::user()['user_img']))
+                                                    <img src="{{ url('/images/user_img/'.Auth::User()->user_img) }}"
+                                                        class="dropdown-user-circle" alt="">
+                                                    @else
+                                                    <img src="{{ asset('images/default/user.jpg')}}"
+                                                        class="dropdown-user-circle" alt="">
+                                                    @endif
+                                                    <div class="user-detailss">
+                                                        {{ Auth::User()->fname }}
+                                                        <br>
+                                                        {{ Auth::User()->email }}
+                                                    </div>
+        
+                                                </div>
+                                                @if(Auth::User()->role == "admin" )
+                                                <a target="_blank" href="{{ url('/admins') }}">
+                                                    <li><i class="fa fa-dashboard"></i>{{ __('frontstaticword.AdminDashboard')
+                                                        }}</li>
+                                                </a>
+                                                @endif
+                                                @if(Auth::User()->role == "instructor")
+        
+                                                <a target="_blank" href="{{ url('/instructor') }}">
+                                                    <li><i class="fa fa-dashboard"></i>{{
+                                                        __('frontstaticword.InstructorDashboard') }}</li>
+                                                </a>
+                                                @endif
+                                                <a href="{{ route('mycourse.show') }}">
+                                                    <li><i class="fa fa-diamond"></i>{{ __('frontstaticword.MyCourses') }}</li>
+                                                </a>
+                                                <!-- <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a> -->
+                                                <a href="{{ route('purchase.show') }}">
+                                                    <li><i class="fa fa-shopping-cart"></i>{{
+                                                        __('frontstaticword.PurchaseHistory') }}</li>
+                                                </a>
+                                                <a href="{{route('profile.show',Auth::User()->id)}}">
+                                                    <li><i class="fa fa-user"></i>{{ __('frontstaticword.UserProfile') }}</li>
+                                                </a>
+                                                @if(Auth::User()->role == "user")
+                                                @if($gsetting->instructor_enable == 1)
+                                                <a href="#" data-toggle="modal" data-target="#myModalinstructor"
+                                                    title="Become An Instructor">
+                                                    <li><i class="fas fa-chalkboard-teacher"></i>{{
+                                                        __('frontstaticword.BecomeAnInstructor') }}</li>
+                                                </a>
+        
+                                                @endif
+        
+                                                @endif
+        
+        
+                                                @if(env('ENABLE_INSTRUCTOR_SUBS_SYSTEM') == 1)
+        
+                                                @if(Auth::User()->role == "instructor")
+                                                <a href="{{ route('plan.page') }}">
+                                                    <li><i class="fas fa-user-tag"></i>{{ __('frontstaticword.InstructorPlan')
+                                                        }}</li>
+                                                </a>
+                                                @endif
+                                                @endif
+        
+        
+                                                @if(Auth::User()->role == "user" || Auth::User()->role == "instructor")
+                                                @if($gsetting->device_control == 1)
+                                                <a href="{{ route('active.courses') }}" title="Watchlist">
+                                                    <li><i class="fas fa-swatchbook"></i>{{ __('frontstaticword.Watchlist') }}
+                                                    </li>
+                                                </a>
+                                                @endif
+                                                @endif
+        
+        
+                                                @if(Module::has('Wallet') && Module::find('Wallet')->isEnabled())
+                                                @include('wallet::front.nav_link')
+        
+                                                @endif
+        
+        
+                                                <a href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    <div id="notificationFooter">
+                                                        {{ __('frontstaticword.Logout') }}
+        
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                            class="display-none">
+                                                            @csrf
+                                                        </form>
+                                                    </div>
+                                                </a>
+                                            </ul>
                                         </div>
-                                        @if(Auth::User()->role == "admin" )
-                                        <a target="_blank" href="{{ url('/admins') }}">
-                                            <li><i class="fa fa-dashboard"></i>{{ __('frontstaticword.AdminDashboard')
-                                                }}</li>
-                                        </a>
-                                        @endif
-                                        @if(Auth::User()->role == "instructor")
-
-                                        <a target="_blank" href="{{ url('/instructor') }}">
-                                            <li><i class="fa fa-dashboard"></i>{{
-                                                __('frontstaticword.InstructorDashboard') }}</li>
-                                        </a>
-                                        @endif
-                                        <a href="{{ route('mycourse.show') }}">
-                                            <li><i class="fa fa-diamond"></i>{{ __('frontstaticword.MyCourses') }}</li>
-                                        </a>
-                                        <!-- <a href="{{ route('wishlist.show') }}"><li><i class="fa fa-heart"></i>{{ __('frontstaticword.MyWishlist') }}</li></a> -->
-                                        <a href="{{ route('purchase.show') }}">
-                                            <li><i class="fa fa-shopping-cart"></i>{{
-                                                __('frontstaticword.PurchaseHistory') }}</li>
-                                        </a>
-                                        <a href="{{route('profile.show',Auth::User()->id)}}">
-                                            <li><i class="fa fa-user"></i>{{ __('frontstaticword.UserProfile') }}</li>
-                                        </a>
-                                        @if(Auth::User()->role == "user")
-                                        @if($gsetting->instructor_enable == 1)
-                                        <a href="#" data-toggle="modal" data-target="#myModalinstructor"
-                                            title="Become An Instructor">
-                                            <li><i class="fas fa-chalkboard-teacher"></i>{{
-                                                __('frontstaticword.BecomeAnInstructor') }}</li>
-                                        </a>
-
-                                        @endif
-
-                                        @endif
-
-
-                                        @if(env('ENABLE_INSTRUCTOR_SUBS_SYSTEM') == 1)
-
-                                        @if(Auth::User()->role == "instructor")
-                                        <a href="{{ route('plan.page') }}">
-                                            <li><i class="fas fa-user-tag"></i>{{ __('frontstaticword.InstructorPlan')
-                                                }}</li>
-                                        </a>
-                                        @endif
-                                        @endif
-
-
-                                        @if(Auth::User()->role == "user" || Auth::User()->role == "instructor")
-                                        @if($gsetting->device_control == 1)
-                                        <a href="{{ route('active.courses') }}" title="Watchlist">
-                                            <li><i class="fas fa-swatchbook"></i>{{ __('frontstaticword.Watchlist') }}
-                                            </li>
-                                        </a>
-                                        @endif
-                                        @endif
-
-
-                                        @if(Module::has('Wallet') && Module::find('Wallet')->isEnabled())
-                                        @include('wallet::front.nav_link')
-
-                                        @endif
-
-
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <div id="notificationFooter">
-                                                {{ __('frontstaticword.Logout') }}
-
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                    class="display-none">
-                                                    @csrf
-                                                </form>
-                                            </div>
-                                        </a>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
