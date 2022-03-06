@@ -2303,7 +2303,14 @@ sup.redstar {
 }
 @media (min-width: 767px){
   .home-main-block{
-    height: 40rem;
+    /* height: 40rem; */
+    padding: 300px 5px;
+  }
+}
+@media (max-width: 768px){
+  .home-main-block{
+    /* height: 300px; */
+    padding: 95px 5px;
   }
 }
 @media (max-width: 567px) {

@@ -51,7 +51,7 @@
         @foreach($sliders as $slider)
 
         @if($slider->status == 1)
-        <div id="home" class="home-main-block" style="background-image: url('{{ asset('images/slider/'.$slider['image']) }}');">
+        <div id="home" class="home-main-block" style="background-image: url('{{ asset('images/slider/'.$slider['image']) }}');background-repeat:no-repeat;background-size:contain;background-position:center;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 {{$slider['left'] == 1 ? 'col-md-offset-6 col-sm-offset-6 col-sm-6 col-md-6 text-right' : ''}}">
