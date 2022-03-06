@@ -51,32 +51,11 @@
         @foreach($sliders as $slider)
 
         @if($slider->status == 1)
-        <div id="home" class="home-main-block" style="background-image: url('{{ asset('images/slider/'.$slider['image']) }}'); height:37rem;">
+        <div id="home" class="home-main-block" style="background-image: url('{{ asset('images/slider/'.$slider['image']) }}');">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 {{$slider['left'] == 1 ? 'col-md-offset-6 col-sm-offset-6 col-sm-6 col-md-6 text-right' : ''}}">
-                        <div class="home-dtl">
-                            <!-- <div class="home-heading">{{ $slider['heading'] }}</div>
-                            <p class="btm-10">{{ $slider['sub_heading'] }}</p>
-                            <p class="btm-20">{{ $slider['detail'] }} -->
-
-                            </div>
-
-                            <!-- @if($slider->search_enable == 1)
-                                <div class="home-search">
-                                    <form method="GET" id="searchform" action="{{ route('search') }}">
-                                        <div class="search">
-                                        
-                                          <input type="text" name="searchTerm" class="searchTerm" placeholder="What do you want to learn?">
-                                          <button type="submit" class="searchButton">
-                                            <i class="fa fa-search"></i>
-                                         </button>
-
-                                        </div>
-                                    </form> 
-                                </div>
-                            @endif -->
-                            
+                        <div class="home-dtl"></div>                            
                         </div>
                     </div>
                 </div>

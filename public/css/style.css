@@ -744,11 +744,11 @@ sup.redstar {
     /*===== Home =====*/
 /* ================================= */
 .home-main-block {
-  padding: 110px 90px;
+  padding: 90px 90px;
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  /* height: 100%; */
 }
 .home-heading {
   font-size: 50px;
@@ -823,10 +823,10 @@ sup.redstar {
   .home-heading {
     font-size: 40px;
   }
-  .home-main-block {
+  /* .home-main-block {
     padding: 30px 25px;
     height: 350px;
-  }
+  } */
   .search-block .form-control {
     width: 100%;
   }
@@ -2296,8 +2296,14 @@ sup.redstar {
   .about-home-one-main-block {
     padding: 130px 110px;
   }
+  
   .nav-menu-bar-main-block #cssmenu > ul > li > a {
     font-size: 12px;
+  }
+}
+@media (min-width: 767px){
+  .home-main-block{
+    height: 37rem;
   }
 }
 @media (max-width: 567px) {
@@ -8596,9 +8602,9 @@ input[type="text"].search-input {
   .home-search .searchTerm {
     width: 100%;
   }
-  .home-main-block {
+  /* .home-main-block {
     height: 390px;
-  }
+  } */
   .learning-work-icon i {
     margin-left: 0;
   }
