@@ -10,7 +10,7 @@
                    
                     <div class="footer-logo">
                         <h3 class="bold text-white" style="font-weight: bolder;">DISCLAIMER</h3>
-                        <p class="text-white">All information in this website are only for education and knowledge on investment strategy that you can used. Information in this website are based on research and fact-finding by Author of Lubok Harta and it remains as Author's opinion and idea. We are not involving in any fund/money collection, any buy or sell call on any investment either by derivatives/securities/stocks/bond. All investment decisions are yours.</p>
+                        <p class="text-white">All information in this website are only for educational purpose. Knowledge on ivenstment strategy in this website are based on research and fact finding by author of Lubokharta and it remains as Author’s opinion and idea. We are not involve in any fund/money collecting activities and we are not taking any responsibilities for monetary loses from your investment. All investment decision are your own responsibility and you should ask your License Financial Planner for any investment advice.</p>
                     </div>
                 </div>
                 @if(isset($widgets))

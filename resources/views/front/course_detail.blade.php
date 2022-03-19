@@ -352,7 +352,7 @@
 
                                     @if(Auth::User()->role == "admin")
                                         <div class="about-home-btn btm-20">
-                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('preview this course') }}</a>
                                         </div>
                                     @else
                                         @if(isset($course->duration))
@@ -367,12 +367,12 @@
                                         @if(!empty($order) && $order->status == 1)
 
                                             <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('preview this course') }}</a>
                                             </div>
 
                                         @elseif(isset($course_id) && in_array($course->id, $course_id))
                                             <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('preview this course') }}</a>
                                             </div>
 
 
@@ -382,7 +382,7 @@
                                         @elseif(!empty($instruct_course->id) && $instruct_course->id == $course->id)
 
                                             <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('preview this course') }}</a>
                                             </div>
 
 
@@ -431,7 +431,7 @@
                                 @if(Auth::check())
                                     @if(Auth::User()->role == "admin")
                                         <div class="about-home-btn btm-20">
-                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('preview this course') }}</a>
                                         </div>
                                     @else
                                         @php
@@ -443,7 +443,7 @@
                                             </div>
                                         @else
                                             <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="Cart">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="Cart">{{ __('preview this course') }}</a>
                                             </div>
                                         @endif
                                     @endif
@@ -1124,7 +1124,6 @@
                 </div>
                 <div class="description-block btm-30">
                     <h3>{{ __('frontstaticword.Description') }}</h3>
-
                     <p>{!! $course->detail !!}</p>
 
                 </div>

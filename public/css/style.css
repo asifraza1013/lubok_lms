@@ -373,6 +373,7 @@ ul {
 }
 .txt-rgt {
   text-align: right;
+  color: black;
 }
 .txt-black {
   color: var(--text-black-color);
@@ -823,10 +824,10 @@ sup.redstar {
   .home-heading {
     font-size: 40px;
   }
-  /* .home-main-block {
-    padding: 30px 25px;
-    height: 350px;
-  } */
+  .home-main-block {
+    /* padding: 30px 25px; */
+    height: 150px;
+  }
   .search-block .form-control {
     width: 100%;
   }
@@ -1546,6 +1547,13 @@ sup.redstar {
 }
 .requirements ul li {
   font-size: 16px;
+  color: black;
+}
+.description-block p {
+  color: black;
+}
+.blog-desc p, .blog-desc,h1, .blog-desc h2, .blog-desc h3, .blog-desc span, .blog-desc strong{
+  color: black;
 }
 .requirements ul {
   list-style-type: disc;
@@ -2303,14 +2311,14 @@ sup.redstar {
 }
 @media (min-width: 767px){
   .home-main-block{
-    /* height: 40rem; */
-    padding: 300px 5px;
+    height: 38rem;
+    /* padding: 300px 5px; */
   }
 }
 @media (max-width: 768px){
   .home-main-block{
     /* height: 300px; */
-    padding: 95px 5px;
+    padding: 80px 5px;
   }
 }
 @media (max-width: 567px) {
@@ -3131,6 +3139,7 @@ sup.redstar {
 .blog-dtl-block p,
 .blog-dtl-block a {
   font-size: 19px;
+  color: black;
 }
 .blog-dtl-block span {
   font-weight: 700;
@@ -7305,7 +7314,8 @@ input.razorpay-payment-button {
 }
 .koh-faq-question-span {
   font-size: 14px !important;
-  color: var(--text-blue-color) !important;
+  /* color: var(--text-blue-color) !important; */
+  color: black;
   display: inline-block;
 }
 .koh-faq-answer {
@@ -7802,8 +7812,12 @@ input.razorpay-payment-button {
 }
 .chapter-total-time {
   text-align: right;
+  color: black;
 }
 
+.cboxElement{
+  text-align: end;
+}
 .about-home-product .nav-search .form-control {
     padding: 13px 0 13px 21px;
     color: var(--text-black-color);

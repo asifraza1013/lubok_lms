@@ -575,7 +575,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-3 p-0">
                                     <div class="search search-one" id="search">
                                         <form method="GET" id="searchform" action="{{ route('search') }}">
                                             <div class="search-input-wrap">

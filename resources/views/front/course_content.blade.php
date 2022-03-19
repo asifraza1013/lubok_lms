@@ -333,7 +333,7 @@
                             </div>
                             <div class="content-course-block">
                                 <h4 class="content-course">{{ __('frontstaticword.Aboutthiscourse') }}</h4>
-                                <p class="btm-40">{{ $course->short_detail }}</p>
+                                <p class="btm-40 text-black">{{ $course->short_detail }}</p>
                             </div>
                             <hr>
                             <div class="content-course-number-block">
@@ -393,9 +393,9 @@
                                     <div class="col-lg-9">
                                         <div class="content-course-number content-course-one">
                                             <h5 class="content-course-number-heading">{{ __('frontstaticword.Aboutthiscourse') }}</h5>
-                                            <p>{{ $course->short_detail }}<p>
+                                            <p class="text-black">{{ $course->short_detail }}<p>
                                             <h5 class="content-course-number-heading">{{ __('frontstaticword.Description') }}</h5>
-                                            <p>{!! $course->detail !!}<p>
+                                            <p class="text-black">{!! $course->detail !!}<p>
                                         </div>
                                     </div>
                                 </div>
